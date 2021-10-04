@@ -116,9 +116,7 @@ Weierstrass 函数是
 		    & =0.
 	\end{aligned}
 \end{equation}
-其中用到了无散条件和壁面无穿透边界条件。
-
-所以只有黏性力做功耗散动能.为了证明动能将区域$0$，将速度进行螺旋波分解，\cite{yang_su_wu_2010}
+其中用到了无散条件和壁面无穿透边界条件。所以只有黏性力做功耗散动能.为了证明动能将趋于$0$，将速度进行螺旋波分解，\cite{yang_su_wu_2010}
 \begin{equation}
 	\bm{v}=\nabla \phi+\sum_{s} \sum_{\bm{k}} \widehat{v}_{s}(\bm{k}) \bm{\phi}_{s}(\bm{k}, \bm{x}),
 	\label{eq:2vhel}
@@ -136,7 +134,7 @@ Weierstrass 函数是
 \begin{equation}
 	\bm{\xi}=\nabla \times \boldsymbol{v}=\nabla \varphi+\sum_{s, \boldsymbol{k}}\left[s k \widehat{v}_{s}+b_{s}(\boldsymbol{k})\right] \boldsymbol{\phi}_{s}.
 \end{equation}
-由于$\bm{v}\big|_{\partial \mathscr{D}}=0$，所以$(\bm{\xi}\cdot \bm{n})=0$,上式化为
+由于$\bm{v}\big|_{\partial \mathscr{D}}=0$，所以$(\bm{\xi}\cdot \bm{n})\big|_{\partial \mathscr{D}}=0$,上式化为
 \begin{equation}
 	\bm{\xi}=\sum_{s, \boldsymbol{k}}s k \widehat{v}_{s} \boldsymbol{\phi}_{s}.
 \end{equation}
@@ -147,7 +145,7 @@ Weierstrass 函数是
 \end{equation}
 能量变化满足方程
 \begin{equation}
-	\rho \frac{\Dif}{\Dif t}\left(\frac{1}{2}v^2\right) = - \Psi = - \mu \xi^2.
+	\rho \frac{\Dif}{\Dif t}\left(\frac{1}{2}v^2\right) = - \Phi = - \mu \xi^2.
 \end{equation}
 对全场积分得总能量随时间的变化率
 \begin{equation}
@@ -155,7 +153,7 @@ Weierstrass 函数是
 \end{equation}
 将螺旋波分解代入上式可得
 \begin{equation}
-	\frac{\dif E}{\dif t} = \frac{1}{2} \rho \frac{\dif }{\dif t} \iiint v^2 \dif V =  \frac{1}{2} \rho \frac{\dif }{\dif t} \sum_{s,\bm{k}} \widehat{v}_{s}^2
+	\frac{\dif E}{\dif t} = \frac{1}{2} \rho \frac{\dif }{\dif t} \iiint v^2 \dif V =  \frac{1}{2} \rho \frac{\dif }{\dif t} \sum_{s,\bm{k}} \widehat{v}_{s}^2,
 \end{equation}
 而
 \begin{equation}
@@ -165,7 +163,7 @@ Weierstrass 函数是
 \begin{equation}
 	\frac{\dif E}{\dif t} = \frac{1}{2} \rho \frac{\dif }{\dif t} \sum_{s,\bm{k}} \widehat{v}_{s}^2 \leqslant - \mu \sum_{s, \boldsymbol{k}}  \widehat{v}_{s}^2.
 \end{equation}
-由此可见，动能以比指数衰减更快的速度衰减，所以任意的扰动都越来越小，趋于静止，不会发展成湍流。\qed
+由此可见，动能以比指数衰减相等或更快的速度衰减，所以任意的扰动都越来越小，趋于静止，不会发展成湍流。\qed
 
 
 \section{3}
@@ -204,7 +202,7 @@ Weierstrass 函数是
 	\frac{1}{\pi} \int^\pi_{-\pi} \sin mt \sin nt \dif t = \delta_{mn},\\
 	\frac{1}{\pi} \int^\pi_{-\pi} \sin mt \cos nt \dif t = 0.
 \end{gather}
-可得$a_{mn},\, d_{mn} = 0$ 是可能的解，重新定义$a=\pi d/a$,假设题目所说的三阶指的是$m,n \in \{-1,0,1\}$.则$\psi,\theta$的表达式可以写成\cite[P252]{shi}
+可得$a_{mn},\, d_{mn} = 0$ 是可能的解，重新定义$a=\pi d/a$,假设题目所说的三阶指的是$m,n \in \{-1,0,1\}$，则$\psi,\theta$的表达式可以写成\cite[P252]{shi}
 \begin{equation}
 	\pi a \left(\pi^2+a^2\right)^{-1} \kappa^{-1} \psi = X \sqrt{2} \sin \left(\frac{\pi y}{d}\right) \sin \left(\frac{a x}{d}\right),
 	\label{eq:33}
@@ -213,13 +211,15 @@ Weierstrass 函数是
 	\pi R_c^{-1}R_a \Delta T^{-1} \theta= Y \sqrt{2} \sin \left(\frac{\pi y}{d}\right) \cos \left(\frac{\pi x}{a}\right)- Z \sin \left(\frac{\pi y}{d}\right).
 	\label{eq:34}
 \end{equation}
-其中$X,\, Y,\, Z.$都只是和无量纲时间$\tau = (\pi^2 + a^2)\kappa t / d^2$有关的函数。$R_a = g \alpha \Delta T d^3 / (\nu \kappa)$是Rayleigh数，$R_c = (\pi^2+a^2)^3/a^2$是线性化小扰动理论导出的临界Rayleigh数，代入\cref{eq:31}可得
+其中$X,\, Y,\, Z.$都只是和无量纲时间$\tau = (\pi^2 + a^2)\kappa t / d^2$有关的函数。 $R_a = g \alpha \Delta T d^3 / (\nu \kappa)$是Rayleigh数， $R_c = (\pi^2+a^2)^3/a^2$是线性化小扰动理论导出的临界Rayleigh数，代入\cref{eq:31}可得
 \begin{equation}
+	\left\{
 	\begin{aligned}
-		 & \frac{\mathrm{d} X}{\mathrm{~d} \tau}=-\sigma X+\sigma Y \\
-		 & \frac{\mathrm{d} Y}{\mathrm{~d} \tau}=-X Z+r X-Y         \\
-		 & \frac{\mathrm{d} Z}{\mathrm{~d} \tau}=X Y-b Z
+		 & \frac{\mathrm{d} X}{\mathrm{~d} \tau}=-\sigma X+\sigma Y, \\
+		 & \frac{\mathrm{d} Y}{\mathrm{~d} \tau}=-X Z+r X-Y,         \\
+		 & \frac{\mathrm{d} Z}{\mathrm{~d} \tau}=X Y-b Z.
 	\end{aligned}
+	\right.
 	\label{eq:3lorenz}
 \end{equation}
 其中 $\sigma=\gamma / \kappa$ 是 Prandtl 数, $r=R_{a} / R_{c},\, b=4\left(1+a^{2} \pi^{-2}\right)^{-1}$ 。此方程组是 Lorenz 方程组。
