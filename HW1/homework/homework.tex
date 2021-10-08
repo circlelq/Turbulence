@@ -109,10 +109,10 @@ Weierstrass 函数是
 取任意控制体$V$，功率
 \begin{equation}
 	\begin{aligned}
-		p_2 & =  \iiint_V \omega^2\bm{r} \cdot \bm{v} \dif v                                                                          \\
-		    & =      \frac{1}{2} \omega^2 \iiint_V \left( \nabla \cdot \left(\bm{v}r^2\right) - r^2 \nabla \cdot \bm{v}\right) \dif v \\
-		    & =      \frac{1}{2} \omega^2 \iiint_V \nabla \cdot \left(\bm{v}r^2\right)  \dif v                                        \\
-		    & =      \frac{1}{2} \omega^2 \oiint_S \bm{n} \cdot \left(\bm{v}r^2\right)  \dif s                                        \\
+		p_2 & =  \int_V \omega^2\bm{r} \cdot \bm{v} \dif v                                                                          \\
+		    & =      \frac{1}{2} \omega^2 \int_V \left( \nabla \cdot \left(\bm{v}r^2\right) - r^2 \nabla \cdot \bm{v}\right) \dif v \\
+		    & =      \frac{1}{2} \omega^2 \int_V \nabla \cdot \left(\bm{v}r^2\right)  \dif v                                        \\
+		    & =      \frac{1}{2} \omega^2 \oiint_S \bm{n} \cdot \left(\bm{v}r^2\right)  \dif s                                      \\
 		    & =0.
 	\end{aligned}
 \end{equation}
@@ -139,25 +139,17 @@ Weierstrass 函数是
 	\bm{\xi}=\sum_{s, \boldsymbol{k}}s k \widehat{v}_{s} \boldsymbol{\phi}_{s}.
 \end{equation}
 
-耗散函数
+对全场积分得总能量随时间的变化率\cite[P36]{wu_vortical_flows}
 \begin{equation}
-	\Phi = \mu \xi^2.
-\end{equation}
-能量变化满足方程
-\begin{equation}
-	\rho \frac{\Dif}{\Dif t}\left(\frac{1}{2}v^2\right) = - \Phi = - \mu \xi^2.
-\end{equation}
-对全场积分得总能量随时间的变化率
-\begin{equation}
-	\frac{\dif E}{\dif t} = \iiint \rho \frac{\Dif}{\Dif t}\left(\frac{1}{2}v^2\right) \dif V =  \frac{1}{2} \rho \frac{\dif }{\dif t} \iiint v^2 \dif V = - \mu  \iiint \xi^2 \dif V.
+	\frac{\dif E}{\dif t} = \int_V \rho \frac{\Dif}{\Dif t}\left(\frac{1}{2}v^2\right) \dif V =  \frac{1}{2} \rho \frac{\dif }{\dif t} \int_V v^2 \dif V = -\int_V \Phi \dif V = - \mu  \int_V \xi^2 \dif V.
 \end{equation}
 将螺旋波分解代入上式可得
 \begin{equation}
-	\frac{\dif E}{\dif t} = \frac{1}{2} \rho \frac{\dif }{\dif t} \iiint v^2 \dif V =  \frac{1}{2} \rho \frac{\dif }{\dif t} \sum_{s,\bm{k}} \widehat{v}_{s}^2,
+	\frac{\dif E}{\dif t} = \frac{1}{2} \rho \frac{\dif }{\dif t} \int_V v^2 \dif V =  \frac{1}{2} \rho \frac{\dif }{\dif t} \sum_{s,\bm{k}} \widehat{v}_{s}^2,
 \end{equation}
 而
 \begin{equation}
-	\iiint \xi^2 \dif V = \sum_{s, \boldsymbol{k}} k^2 \widehat{v}_{s}^2 \geqslant \sum_{s, \boldsymbol{k}} \widehat{v}_{s}^2,
+	\int_V \xi^2 \dif V = \sum_{s, \boldsymbol{k}} k^2 \widehat{v}_{s}^2 \geqslant \sum_{s, \boldsymbol{k}} \widehat{v}_{s}^2,
 \end{equation}
 所以
 \begin{equation}
@@ -208,7 +200,7 @@ Weierstrass 函数是
 	\label{eq:33}
 \end{equation}
 \begin{equation}
-	\pi R_c^{-1}R_a \Delta T^{-1} \theta= Y \sqrt{2} \sin \left(\frac{\pi y}{d}\right) \cos \left(\frac{\pi x}{a}\right)- Z \sin \left(\frac{\pi y}{d}\right).
+	\pi R_c^{-1}R_a \Delta T^{-1} \theta= Y \sqrt{2} \sin \left(\frac{\pi y}{d}\right) \cos \left(\frac{a x}{d}\right)- Z \sin \left(\frac{\pi y}{d}\right).
 	\label{eq:34}
 \end{equation}
 其中$X,\, Y,\, Z.$都只是和无量纲时间$\tau = (\pi^2 + a^2)\kappa t / d^2$有关的函数。 $R_a = g \alpha \Delta T d^3 / (\nu \kappa)$是Rayleigh数， $R_c = (\pi^2+a^2)^3/a^2$是线性化小扰动理论导出的临界Rayleigh数，代入\cref{eq:31}可得
@@ -241,8 +233,8 @@ Weierstrass 函数是
 \begin{equation}
 	\begin{aligned}
 		\frac{\dif V}{\dif \tau} & = \oiint \bm{n} \cdot \bm{f} \dif s                                                                                                                                   \\
-		                         & = \iiint \nabla  \cdot \bm{f} \dif v                                                                                                                                  \\
-		                         & = \iiint \left(\frac{\partial }{\partial X} (-\sigma X+\sigma Y  ) + \frac{\partial }{\partial Y} (-X Z+r X-Y) + \frac{\partial }{\partial Z} (X Y-b Z )\right)\dif v \\
+		                         & = \int_V \nabla  \cdot \bm{f} \dif v                                                                                                                                  \\
+		                         & = \int_V \left(\frac{\partial }{\partial X} (-\sigma X+\sigma Y  ) + \frac{\partial }{\partial Y} (-X Z+r X-Y) + \frac{\partial }{\partial Z} (X Y-b Z )\right)\dif v \\
 		                         & = (-\sigma - 1 - b) V.
 	\end{aligned}
 \end{equation}
