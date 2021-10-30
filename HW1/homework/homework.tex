@@ -250,9 +250,9 @@ Weierstrass 函数是
 
 提示：参考 \emph{Turbulence, The legacy of A.N.Kolmogorov}.\cite{Frisch_Turbulence}
 
-设中心随机变量$\bm{v} = (v_i,v_j,v_k,v_l)$是高斯分布的，即对任意的 $\bm{c}\in \mathbb{R}^2$，标量$\bm{c}\cdot \bm{v}$是标量高斯随机变量。
+设中心随机变量$\bm{v} = (v_i,v_j,v_k,v_l)$是高斯分布的，即对任意的 $\bm{c}\in \mathbb{R}^4$，标量$\bm{c}\cdot \bm{v}$是标量高斯随机变量。
 
-高斯分布积分定理：设$\bm{v}$是一个中心向量高斯变量，$f$是$n$变量随机函数，假设所有平均值都存在，则
+高斯分部积分定理：设$\bm{v}$是一个中心向量高斯变量，$f$是$n$变量随机函数，假设所有平均值都存在，则
 \begin{equation}
 	\left\langle v_i f(v_1,v_2,\ldots,v_n)\right\rangle = \Gamma_{ij} \left\langle \frac{\partial f}{\partial v_j}\right\rangle,
 \end{equation}
@@ -289,14 +289,15 @@ Weierstrass 函数是
 
 证明高雷诺数下射流的耗散率是常数，与粘性无关。
 
-考虑突然扩大管,如\cref{fig:5kuo}
+考虑突然扩大管,如\cref{fig:5kuo}。
 \begin{figure}[htp]
 	\centering
 	\includegraphics[width=11cm]{kuo.png}
 	\caption{突然扩大管.}
 	\label{fig:5kuo}
 \end{figure}
-列出能量
+
+列出能量方程
 \begin{equation}
 	\varepsilon = \left\langle \frac{1}{2} v_1^2 + \frac{p_1}{\rho}\right\rangle - \left\langle \frac{1}{2} v_2^2 + \frac{p_2}{\rho} \right\rangle,
 \end{equation}
