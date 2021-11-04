@@ -177,22 +177,36 @@ det(ja)
 
 对于 $[0,1]$ 上的分布, 证明其各阶矩构成一个完全单调序列。
 
-$k$阶矩
-\begin{equation}
-	\sigma_n \equiv \int^{+\infty}_{-\infty} x^n p(x) \dif x,\quad n \geqslant 0, \quad n \in \mathbb{Z}^+.
-\end{equation}
 
-对$\forall \{ \xi_i \}$,
+$k$阶矩定义为\cite[P196]{feller}
 \begin{equation}
-	\begin{aligned}
-		\sum_{i,j} \sigma_{i+j}
-		\xi_i \xi_j & = \sum_{i,j} \int^{+\infty}_{-\infty} x^{i+j} \xi_i \xi_j p(x) \dif x         \\
-		            & = \int^{+\infty}_{-\infty} \sum_{i,j} x^{i} \xi_i x^j \xi_j p(x) \dif x       \\
-		            & = \int^{+\infty}_{-\infty}  \left( \sum_{i} x^{i} \xi_i \right)^2 p(x) \dif x \\
-		            & \geqslant 0.
-	\end{aligned}
+	c_k = E(X^k) = \int^1_0 x^k F\{\dif x\},
 \end{equation}
-其中$i,j\in \mathbb{Z}^+$.\qed
+我们认为积分区间是闭的。
+
+求逐次差分，我们得到
+\begin{equation}
+	(-1)^r \Delta^r c_k = E(X^k(1-X)^{r-k})\geqslant 0,
+\end{equation}
+因此矩数列$\{c_k\}$是完全单调的。\qed
+
+
+% $k$阶矩
+% \begin{equation}
+% 	\sigma_n \equiv \int^{+\infty}_{-\infty} x^n p(x) \dif x,\quad n \geqslant 0, \quad n \in \mathbb{Z}^+.
+% \end{equation}
+
+% 对$\forall \{ \xi_i \}$,
+% \begin{equation}
+% 	\begin{aligned}
+% 		\sum_{i,j} \sigma_{i+j}
+% 		\xi_i \xi_j & = \sum_{i,j} \int^{+\infty}_{-\infty} x^{i+j} \xi_i \xi_j p(x) \dif x         \\
+% 		            & = \int^{+\infty}_{-\infty} \sum_{i,j} x^{i} \xi_i x^j \xi_j p(x) \dif x       \\
+% 		            & = \int^{+\infty}_{-\infty}  \left( \sum_{i} x^{i} \xi_i \right)^2 p(x) \dif x \\
+% 		            & \geqslant 0.
+% 	\end{aligned}
+% \end{equation}
+% 其中$i,j\in \mathbb{Z}^+$.\qed
 
 
 \section{6}
@@ -310,14 +324,14 @@ $k$阶矩
 		R(\tau) & = \left\langle X(t_1) X(t_2) \right\rangle                                                                                                                                                  \\
 		        & = A^2 \left\langle \sin \left(\omega_{0} t_1 + \sigma B(t_1)+\theta \right) \sin \left(\omega_{0} t_2 + \sigma B(t_2)+\theta \right) \right\rangle                                          \\
 		        & = A^2 \left\langle \int_0^{2\pi} \sin \left(\omega_{0} t_1 + \sigma B(t_1)+\theta \right) \sin \left(\omega_{0} t_2 + \sigma B(t_2)+\theta \right) \dif \frac{\theta}{2\pi} \right\rangle_B \\
-		        & = A^2 \left\langle  \cos \left(\omega_{0} \tau + \sigma B(\tau) \right) \right\rangle_B                                                                                                     \\
-		        & = A^2 \int^{+\infty}_{-\infty}  \cos \left(\omega_{0} \tau + \sigma x \right) \frac{1}{\sqrt{2\pi}} \me^{-x^2} \dif x                                                                       \\
-		        & = \frac{A^2}{\sqrt{2}} \cos(\omega_0 \tau) \me^{-\frac{\sigma^2}{4}}.
+		        & = \frac{A^2}{2}\left\langle  \cos \left(\omega_{0} \tau + \sigma B(\tau) \right) \right\rangle_B                                                                                            \\
+		        & = \frac{A^2}{2}\int^{+\infty}_{-\infty}  \cos \left(\omega_{0} \tau + \sigma x \right) \frac{1}{\sqrt{2\pi \tau}} \me^{\frac{-x^2}{2\tau}} \dif x                                           \\
+		        & = \frac{A^2}{2}\cos(\omega_0 \tau) \me^{-\frac{\sigma^2\tau}{2}}.
 	\end{aligned}
 \end{equation}
 所以
 \begin{equation}
-	\lim_{T \to +\infty} \frac{1}{T} \int^T_0 R(\tau) \dif \tau = \lim_{T \to +\infty} \frac{1}{T} \int^T_0 \frac{A^2}{\sqrt{2}} \cos(\omega_0 \tau) \me^{-\frac{\sigma^2}{4}} \dif \tau = 0.
+	\lim_{T \to +\infty} \frac{1}{T} \int^T_0 R(\tau) \dif \tau = \lim_{T \to +\infty} \frac{1}{T} \int^T_0 \frac{A^2}{2}\cos(\omega_0 \tau) \me^{-\frac{\sigma^2\tau}{2}} \dif \tau = 0.
 \end{equation}
 根据各态历经定理有此随机过程具有遍历性。
 
