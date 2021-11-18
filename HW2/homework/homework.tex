@@ -8,14 +8,14 @@
 \graphicspath{{../}}
 
 
-%pdf文件设置
+%pdf 文件设置
 \hypersetup{
 	pdfauthor={袁磊祺},
 	pdftitle={湍流2}
 }
 
 \title{
-	\vspace{-1in} 	
+	\vspace{-1in}
 	\usefont{OT1}{bch}{b}{n}
 	\normalfont \normalsize \textsc{\LARGE Peking University}\\[1cm] % Name of your university/college \\ [25pt]
 	\horrule{0.5pt} \\[0.5cm]
@@ -23,7 +23,7 @@
 	\horrule{2pt} \\[0.5cm]
 }
 \author{
-	\normalfont 								\normalsize
+	\normalfont									\normalsize
 	College of Engineering \quad 2001111690  \quad 袁磊祺\\	\normalsize
 	\today
 }
@@ -54,18 +54,10 @@ As was the case for the corresponding discrete random variables, the probability
 \begin{equation}
 	\begin{aligned}
 		\int_{-\infty}^{\infty} P(s) \dif s & =\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} P(x, y) \delta(s-f(x, y)) \dif s \dif x \dif y \\
-		                                    & =\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} P(x, y) \dif x \dif y=1.
-	\end{aligned}
-\end{equation}
-The last equality is due to the normalization of $P(x, y)$.
-
-此题中$f (x, y) = x y $, 又由于两个变量是独立的，所以$P(x,y) = P(x) P(y)$.代入\cref{eq:1Dirac}可得
-\begin{equation}
-	\begin{aligned}
 		P(s) & =\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} P(x, y) \delta(s-f(x, y)) \dif x \dif y                        \\
-		     & =\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} P_X(x) P_Y(y) \delta(s-xy) \dif x \dif y                       \\
-		     & =\int_{-\infty}^{\infty} \dif x P_X(x) \frac{1}{\abs{x}} \int_{-\infty}^{\infty}   P_Y(y) \delta(s/x-y)  \dif y \\
-		     & =\int_{-\infty}^{\infty}  P_X(x) \frac{1}{\abs{x}} P_Y(s/x) \dif x                                              \\
+			 & =\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} P_X(x) P_Y(y) \delta(s-xy) \dif x \dif y                       \\
+			 & =\int_{-\infty}^{\infty} \dif x P_X(x) \frac{1}{\abs{x}} \int_{-\infty}^{\infty}   P_Y(y) \delta(s/x-y)  \dif y \\
+			 & =\int_{-\infty}^{\infty}  P_X(x) \frac{1}{\abs{x}} P_Y(s/x) \dif x                                              \\
 	\end{aligned}
 \end{equation}
 
@@ -84,11 +76,11 @@ The last equality is due to the normalization of $P(x, y)$.
 \begin{equation}
 	\begin{aligned}
 		P(s) & =\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} P(x, y) \delta(s-f(x, y)) \dif x \dif y              \\
-		     & =\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} P_X(x) P_Y(y) \delta(s-y/x) \dif x \dif y            \\
-		     & =\int_{-\infty}^{\infty} \dif x \abs{x} P_X(x)  \int_{-\infty}^{\infty}   P_Y(y) \delta(sx-y)  \dif y \\
-		     & =\int_{-\infty}^{\infty} \abs{x} P_X(x) P_Y(sx) \dif x                                                \\
-		     & = \frac{1}{2\pi} \int_{-\infty}^{\infty} \abs{x} \me^{-\frac{x^2}{2}} \me^{-\frac{s^2x^2}{2}} \dif x  \\
-		     & = \frac{1}{\pi (s^2+1)}.
+			 & =\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} P_X(x) P_Y(y) \delta(s-y/x) \dif x \dif y            \\
+			 & =\int_{-\infty}^{\infty} \dif x \abs{x} P_X(x)  \int_{-\infty}^{\infty}   P_Y(y) \delta(sx-y)  \dif y \\
+			 & =\int_{-\infty}^{\infty} \abs{x} P_X(x) P_Y(sx) \dif x                                                \\
+			 & = \frac{1}{2\pi} \int_{-\infty}^{\infty} \abs{x} \me^{-\frac{x^2}{2}} \me^{-\frac{s^2x^2}{2}} \dif x  \\
+			 & = \frac{1}{\pi (s^2+1)}.
 	\end{aligned}
 \end{equation}\qed
 
@@ -114,7 +106,7 @@ The last equality is due to the normalization of $P(x, y)$.
 \begin{equation}
 	\begin{aligned}
 		L(p) = & - \int p \ln p \dif x + \lambda_0 \left(1- \int p \dif x\right)                                            \\
-		       & + \lambda_1 \left( \mu - \int x p \dif x\right) + \lambda_2 \left(\sigma - \int (x-\mu)^2 p \dif x\right).
+			   & + \lambda_1 \left( \mu - \int x p \dif x\right) + \lambda_2 \left(\sigma - \int (x-\mu)^2 p \dif x\right).
 	\end{aligned}
 \end{equation}
 对$L(p)$求$p$的变分，得到下式
@@ -156,7 +148,7 @@ syms x y
 a = [x y];
 f = [exp(-1/2*(x^2+y^2)) atan(y/x)/2/pi];
 ja = jacobian(f, a)
-det(ja)	
+det(ja)
 \end{lstlisting}
 可以求得
 \begin{equation}
@@ -193,18 +185,18 @@ $k$阶矩定义为\cite[P196]{feller}
 
 % $k$阶矩
 % \begin{equation}
-% 	\sigma_n \equiv \int^{+\infty}_{-\infty} x^n p(x) \dif x,\quad n \geqslant 0, \quad n \in \mathbb{Z}^+.
+%		\sigma_n \equiv \int^{+\infty}_{-\infty} x^n p(x) \dif x,\quad n \geqslant 0, \quad n \in \mathbb{Z}^+.
 % \end{equation}
 
 % 对$\forall \{ \xi_i \}$,
 % \begin{equation}
-% 	\begin{aligned}
-% 		\sum_{i,j} \sigma_{i+j}
-% 		\xi_i \xi_j & = \sum_{i,j} \int^{+\infty}_{-\infty} x^{i+j} \xi_i \xi_j p(x) \dif x         \\
-% 		            & = \int^{+\infty}_{-\infty} \sum_{i,j} x^{i} \xi_i x^j \xi_j p(x) \dif x       \\
-% 		            & = \int^{+\infty}_{-\infty}  \left( \sum_{i} x^{i} \xi_i \right)^2 p(x) \dif x \\
-% 		            & \geqslant 0.
-% 	\end{aligned}
+%		\begin{aligned}
+%			\sum_{i,j} \sigma_{i+j}
+%			\xi_i \xi_j & = \sum_{i,j} \int^{+\infty}_{-\infty} x^{i+j} \xi_i \xi_j p(x) \dif x         \\
+%															& = \int^{+\infty}_{-\infty} \sum_{i,j} x^{i} \xi_i x^j \xi_j p(x) \dif x       \\
+%															& = \int^{+\infty}_{-\infty}  \left( \sum_{i} x^{i} \xi_i \right)^2 p(x) \dif x \\
+%															& \geqslant 0.
+%		\end{aligned}
 % \end{equation}
 % 其中$i,j\in \mathbb{Z}^+$.\qed
 
@@ -248,19 +240,19 @@ $k$阶矩定义为\cite[P196]{feller}
 \begin{equation}
 	\begin{aligned}
 		R_Y(\Delta t) & = \left\langle Y(t_1)Y(t_2)\right\rangle                                                                                          \\
-		              & = \left\langle \frac{1}{t_1} \int_{0}^{t_1} X(\tau_1) \dif \tau_1 \frac{1}{t_2} \int_{0}^{t_2} X(\tau_2) \dif \tau_2\right\rangle \\
-		              & = \left\langle \frac{1}{t_1 t_2} \int_{0}^{t_1} \int_{0}^{t_2} X(\tau_1)   X(\tau_2) \dif \tau_1 \dif \tau_2\right\rangle         \\
-		              & = \frac{1}{t_1 t_2} \int_{0}^{t_1} \int_{0}^{t_2}\left\langle  X(\tau_1)   X(\tau_2) \right\rangle \dif \tau_1 \dif \tau_2        \\
-		              & = \frac{1}{t_1 t_2} \int_{0}^{t_1} \int_{0}^{t_2} \me^{-a|\tau_1-\tau_2|} \dif \tau_1 \dif \tau_2,                                \\
+					  & = \left\langle \frac{1}{t_1} \int_{0}^{t_1} X(\tau_1) \dif \tau_1 \frac{1}{t_2} \int_{0}^{t_2} X(\tau_2) \dif \tau_2\right\rangle \\
+					  & = \left\langle \frac{1}{t_1 t_2} \int_{0}^{t_1} \int_{0}^{t_2} X(\tau_1)   X(\tau_2) \dif \tau_1 \dif \tau_2\right\rangle         \\
+					  & = \frac{1}{t_1 t_2} \int_{0}^{t_1} \int_{0}^{t_2}\left\langle  X(\tau_1)   X(\tau_2) \right\rangle \dif \tau_1 \dif \tau_2        \\
+					  & = \frac{1}{t_1 t_2} \int_{0}^{t_1} \int_{0}^{t_2} \me^{-a|\tau_1-\tau_2|} \dif \tau_1 \dif \tau_2,                                \\
 	\end{aligned}
 \end{equation}
 不妨设$t_1 \geqslant t_2$,
 \begin{equation}
 	\begin{aligned}
 		R_Y(\Delta t) & = \frac{1}{t_1 t_2} \int_{0}^{t_1} \int_{0}^{t_2} \me^{-a|\tau_1-\tau_2|} \dif \tau_1 \dif \tau_2,                                                                                                                                            \\
-		              & = \frac{1}{t_1 t_2} \left(\int^{t_2}_0 (t_2 - \tau) \me^{-a \tau} \dif \tau +  \int^{t_1 - t_2}_0 t_2 \me^{-a \tau} \dif \tau +  \int^{t_2}_0 (t_2 - \tau) \me^{-a (\tau+t_1-t_2)} \dif \tau   \right)                                        \\
-		              & = \frac{1}{t_1 t_2} \left( \dfrac{\mathrm{e}^{-at_2}}{a^2}+\dfrac{at_2-1}{a^2} + t_2\left(\dfrac{1}{a}-\dfrac{\mathrm{e}^{at_2-at_1}}{a}\right) +  \dfrac{\mathrm{e}^{-at_1}\left(\left(at_2-1\right)\mathrm{e}^{at_2}+1\right)}{a^2} \right) \\
-		              & = -\dfrac{\left(\mathrm{e}^{at_2}\left(\mathrm{e}^{at_2}-\mathrm{e}^{at_1}\left(2at_2-1\right)-1\right)-\mathrm{e}^{at_1}\right)\mathrm{e}^{-a\left(t_2+t_1\right)}}{t_1 t_2 a^2}.
+					  & = \frac{1}{t_1 t_2} \left(\int^{t_2}_0 (t_2 - \tau) \me^{-a \tau} \dif \tau +  \int^{t_1 - t_2}_0 t_2 \me^{-a \tau} \dif \tau +  \int^{t_2}_0 (t_2 - \tau) \me^{-a (\tau+t_1-t_2)} \dif \tau   \right)                                        \\
+					  & = \frac{1}{t_1 t_2} \left( \dfrac{\mathrm{e}^{-at_2}}{a^2}+\dfrac{at_2-1}{a^2} + t_2\left(\dfrac{1}{a}-\dfrac{\mathrm{e}^{at_2-at_1}}{a}\right) +  \dfrac{\mathrm{e}^{-at_1}\left(\left(at_2-1\right)\mathrm{e}^{at_2}+1\right)}{a^2} \right) \\
+					  & = -\dfrac{\left(\mathrm{e}^{at_2}\left(\mathrm{e}^{at_2}-\mathrm{e}^{at_1}\left(2at_2-1\right)-1\right)-\mathrm{e}^{at_1}\right)\mathrm{e}^{-a\left(t_2+t_1\right)}}{t_1 t_2 a^2}.
 	\end{aligned}
 \end{equation}
 
@@ -291,17 +283,17 @@ $k$阶矩定义为\cite[P196]{feller}
 \begin{equation}
 	\begin{aligned}
 		R_Z(\tau) & = \left\langle Z(t_1) Z(t_2)\right\rangle                                                                                                                                                  \\
-		          & = \left\langle (a X(t_1)+b Y(t_1)) (a X(t_2)+b Y(t_2)) \right\rangle                                                                                                                       \\
-		          & = a^2 \left\langle X(t_1) X(t_2) \right\rangle + ab \left\langle X(t_1) Y(t_2) \right\rangle + ab \left\langle X(t_2) Y(t_1) \right\rangle  + b^2 \left\langle Y(t_1) Y(t_2) \right\rangle \\
-		          & = a^2 \left\langle X(t_1) X(t_2) \right\rangle + b^2 \left\langle Y(t_1) Y(t_2) \right\rangle                                                                                              \\
-		          & = a^2 R_X(\tau) + b^2 R_Y(\tau).                                                                                                                                                           \\
+				  & = \left\langle (a X(t_1)+b Y(t_1)) (a X(t_2)+b Y(t_2)) \right\rangle                                                                                                                       \\
+				  & = a^2 \left\langle X(t_1) X(t_2) \right\rangle + ab \left\langle X(t_1) Y(t_2) \right\rangle + ab \left\langle X(t_2) Y(t_1) \right\rangle  + b^2 \left\langle Y(t_1) Y(t_2) \right\rangle \\
+				  & = a^2 \left\langle X(t_1) X(t_2) \right\rangle + b^2 \left\langle Y(t_1) Y(t_2) \right\rangle                                                                                              \\
+				  & = a^2 R_X(\tau) + b^2 R_Y(\tau).                                                                                                                                                           \\
 	\end{aligned}
 \end{equation}
 所以
 \begin{equation}
 	\begin{aligned}
 		P_Z(\omega) & =\frac{1}{2\pi} \int^{\infty}_{-\infty} \left(a^2 R_X(\tau) + b^2 R_Y(\tau)\right) \me^{-\mi \omega \tau} \dif \tau. \\
-		            & = a^2 P_X(\omega) + b^2 P_Y(\omega).
+					& = a^2 P_X(\omega) + b^2 P_Y(\omega).
 	\end{aligned}
 \end{equation}
 
@@ -322,11 +314,11 @@ $k$阶矩定义为\cite[P196]{feller}
 \begin{equation}
 	\begin{aligned}
 		R(\tau) & = \left\langle X(t_1) X(t_2) \right\rangle                                                                                                                                                  \\
-		        & = A^2 \left\langle \sin \left(\omega_{0} t_1 + \sigma B(t_1)+\theta \right) \sin \left(\omega_{0} t_2 + \sigma B(t_2)+\theta \right) \right\rangle                                          \\
-		        & = A^2 \left\langle \int_0^{2\pi} \sin \left(\omega_{0} t_1 + \sigma B(t_1)+\theta \right) \sin \left(\omega_{0} t_2 + \sigma B(t_2)+\theta \right) \dif \frac{\theta}{2\pi} \right\rangle_B \\
-		        & = \frac{A^2}{2}\left\langle  \cos \left(\omega_{0} \tau + \sigma B(\tau) \right) \right\rangle_B                                                                                            \\
-		        & = \frac{A^2}{2}\int^{+\infty}_{-\infty}  \cos \left(\omega_{0} \tau + \sigma x \right) \frac{1}{\sqrt{2\pi \tau}} \me^{\frac{-x^2}{2\tau}} \dif x                                           \\
-		        & = \frac{A^2}{2}\cos(\omega_0 \tau) \me^{-\frac{\sigma^2\tau}{2}}.
+				& = A^2 \left\langle \sin \left(\omega_{0} t_1 + \sigma B(t_1)+\theta \right) \sin \left(\omega_{0} t_2 + \sigma B(t_2)+\theta \right) \right\rangle                                          \\
+				& = A^2 \left\langle \int_0^{2\pi} \sin \left(\omega_{0} t_1 + \sigma B(t_1)+\theta \right) \sin \left(\omega_{0} t_2 + \sigma B(t_2)+\theta \right) \dif \frac{\theta}{2\pi} \right\rangle_B \\
+				& = \frac{A^2}{2}\left\langle  \cos \left(\omega_{0} \tau + \sigma B(\tau) \right) \right\rangle_B                                                                                            \\
+				& = \frac{A^2}{2}\int^{+\infty}_{-\infty}  \cos \left(\omega_{0} \tau + \sigma x \right) \frac{1}{\sqrt{2\pi \tau}} \me^{\frac{-x^2}{2\tau}} \dif x                                           \\
+				& = \frac{A^2}{2}\cos(\omega_0 \tau) \me^{-\frac{\sigma^2\tau}{2}}.
 	\end{aligned}
 \end{equation}
 所以

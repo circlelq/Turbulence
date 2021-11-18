@@ -1,0 +1,114 @@
+%! TEX root = /Users/circle/Documents/博二上/湍流/Turbulence/HW3/homework/homework.tex
+\documentclass[12pt,a4]{ctexart}
+\input{/Users/circle/Documents/博二上/homework/setting.tex}
+\setcounter{secnumdepth}{2}
+\usepackage{bm}
+\usepackage{autobreak}
+\usepackage{amsmath}
+\setlength{\parindent}{2em}
+\graphicspath{{../}}
+
+
+%pdf 文件设置
+\hypersetup{
+   pdfauthor={袁磊祺},
+   pdftitle={湍流3}
+}
+
+\title{
+   \vspace{-1in}
+   \usefont{OT1}{bch}{b}{n}
+   \normalfont \normalsize \textsc{\LARGE Peking University}\\[1cm] % Name of your university/college \\ [25pt]
+   \horrule{0.5pt} \\[0.5cm]
+   \huge \bfseries{湍流3} \\
+   \horrule{2pt} \\[0.5cm]
+}
+\author{
+   \normalfont									\normalsize
+   College of Engineering \quad 2001111690  \quad 袁磊祺\\	\normalsize
+   \today
+}
+\date{}
+
+\begin{document}
+
+\input{setc.tex}
+
+\maketitle
+
+2021 年 11 月 27 日前交电子版.
+
+代码等作业内容可在 \texttt{\href{https://github.com/circlelq/Turbulence}{https://github.com/circlelq/Turbulence}} 查看。
+
+\section{1}
+
+
+对于归一化的一维光滑平稳高斯过程 $X(t)$, 即满足 $\langle X\rangle=0,\left\langle X^{2}\right\rangle=1$, 记 $\dot{X}=$ $\dif X / \dif t$, 证明如下两个条件平均关系: $\langle\ddot{X} \mid X=x\rangle=-\left\langle\dot{X}^{2}\right\rangle x ;\, \left\langle\dot{X}^{2} \mid X=x\right\rangle=\left\langle\dot{X}^{2}\right\rangle$ 。 提示: 应该首先说明或者证明 $\dot{X}(t)$ 和 $\ddot{X}(t)$ 也是高斯过程。
+
+\section{2}
+对于不可压均匀各向同性湍流, 试给出两空间点的涡量速度关联张量的最简 表达式。
+
+
+\section{3}
+对于不可压均匀各向同性湍流, 根据不可压条件 (连续性方程) 和湍流统计量 与构型（configuration）的方向无关的特点, 通过标架旋转证明一点的速度梯 度满足统计关系:
+提示: 可参阅 G.I. Taylor 在 1935 年发表的关于均匀向同性湍流的有关论文。
+\begin{equation}
+   \left\langle\left(\frac{\partial u_{1}}{\partial x_{2}}\right)^{2}\right\rangle=2\left\langle\left(\frac{\partial u_{1}}{\partial x_{1}}\right)^{2}\right\rangle.
+\end{equation}
+
+\section{4}
+将不可压均匀各向同性湍流中两点纵向速度关联函数与一维能谱之间的傅立 叶积分变换关系
+\begin{equation}
+   \left\langle u^{2}\right\rangle f(r)=\int_{-\infty}^{\infty} \phi_{1}(k) \me^{i k r}\dif k
+\end{equation}
+代入如下两点纵向速度关联函数与三维能谱之间的积分变换关系
+\begin{equation}
+   E(k)=\frac{1}{\pi} \int_{-\infty}^{\infty}\left\langle u^{2}\right\rangle f(r)(k r)^{2}\left(\frac{\sin k r}{k r}-\cos k r\right) \dif r,
+\end{equation}
+直接通过计算推出
+\begin{equation}
+   E(k)=k^{3} \frac{d}{\dif k}\left[\frac{1}{k} \frac{d \phi_{1}(k)}{\dif k}\right].
+\end{equation}
+或者, 将
+\begin{equation}
+   \left\langle u^{2}\right\rangle f(r)=2 \int_{-\infty}^{\infty} E(k)(k r)^{-2}\left(\frac{\sin k r}{k r}-\cos k r\right)\dif k
+\end{equation}
+代入傅立叶逆变换关系
+\begin{equation}
+   \phi_{1}(k)=\frac{1}{2 \pi} \int_{-\infty}^{\infty}\left\langle u^{2}\right\rangle f(r) \me^{-i k r} \dif r,
+\end{equation}
+进行积分, 推出
+\begin{equation}
+   \phi_{1}(k)=\frac{1}{2} \int_{k}^{\infty}\left(1-\frac{k^{2}}{\lambda^{2}}\right) \frac{E(\lambda)}{\lambda} \dif \lambda.
+\end{equation}
+两个推导过程任选其一完成即可。提示: 第一个推导利用 $\delta$ 函数及其导数的性质; 第二个推导用到由如下积分关系
+\begin{equation}
+   \frac{1}{2} \int_{0}^{1}\left(1-k^{2}\right) \cos k x \dif k=\frac{1}{x^{2}}\left(\frac{\sin x}{x}-\cos x\right)
+\end{equation}
+带来的余弦变换。
+
+
+\section{5}
+
+用不同于教材中的方法证明教材 (2.3.42) 式:
+\begin{equation}
+   \left\langle u^{2}\right\rangle^{\frac{3}{2}} k(r)=8 \pi \int_{0}^{\infty} \frac{k^{5} \Gamma(k)}{(k r)^{4}}\left(3 \sin k r-3 k r \cos k r-(k r)^{2} \sin k r\right)\dif k.
+\end{equation}
+
+\section{6}
+
+自己从网上或者课题组内部获取实验测量或者直接数值模拟得到的湍流脉动 速度信号的一段长时间的时间序列或者一定样本容量的空间序列。完成下列两 项任务:
+\begin{enumerate}
+   \item 计算两点纵向的二阶和三阶速度关联系数 $f(r),\, k(r)$ 并画出曲线 (可以用泰勒冻结假设);
+   \item 根据 $f(r)$ 计一维能谱 $\phi_{1}(k)$ 和三维能谱 $E(k)$ (在 假设各向同性的情况下利用教材公式 (2.3.23)), 并画出曲线。
+\end{enumerate}
+
+
+
+
+
+% \nocite{*}
+
+\input{bib.tex}
+
+\end{document}
