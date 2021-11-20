@@ -40,8 +40,10 @@
 
 代码等作业内容可在 \texttt{\href{https://github.com/circlelq/Turbulence}{https://github.com/circlelq/Turbulence}} 查看。
 
+
 \section{1}
 
+\textsf{\hspace{-2em}\sf  \textbf{解:}}
 
 对于归一化的一维光滑平稳高斯过程 $X(t)$, 即满足 $\langle X\rangle=0,\left\langle X^{2}\right\rangle=1$, 记 $\dot{X}=$ $\dif X / \dif t$, 证明如下两个条件平均关系: $\langle\ddot{X} \mid X=x\rangle=-\left\langle\dot{X}^{2}\right\rangle x ;\, \left\langle\dot{X}^{2} \mid X=x\right\rangle=\left\langle\dot{X}^{2}\right\rangle$ 。 提示: 应该首先说明或者证明 $\dot{X}(t)$ 和 $\ddot{X}(t)$ 也是高斯过程。
 
@@ -51,15 +53,146 @@
 
 \section{3}
 对于不可压均匀各向同性湍流, 根据不可压条件 (连续性方程) 和湍流统计量 与构型（configuration）的方向无关的特点, 通过标架旋转证明一点的速度梯 度满足统计关系:
-提示: 可参阅 G.I. Taylor 在 1935 年发表的关于均匀向同性湍流的有关论文。
 \begin{equation}
    \left\langle\left(\frac{\partial u_{1}}{\partial x_{2}}\right)^{2}\right\rangle=2\left\langle\left(\frac{\partial u_{1}}{\partial x_{1}}\right)^{2}\right\rangle.
 \end{equation}
+提示: 可参阅 G.I. Taylor 在 1935 年发表的关于均匀向同性湍流的有关论文。
+
+
+为了书写方便，记
+\begin{equation}
+   u = u_1,\, v = u_2,\, w = u_3,\, x = x_1,\, y = x_2,\, z = x_3.
+\end{equation}
+
+由不可压有
+\begin{equation}
+   \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z} = 0,
+\end{equation}
+即
+\begin{equation}
+   \frac{\partial u}{\partial x} = - \frac{\partial v}{\partial y} - \frac{\partial w}{\partial z},
+\end{equation}
+两边平方得
+\begin{equation}
+   \begin{aligned}
+	  \left( \frac{\partial u}{\partial x} \right)^2 & =  \left( \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z} \right)^2                                                                                   \\
+													 & = \left( \frac{\partial v}{\partial y}  \right)^2 + \left( \frac{\partial w}{\partial z}  \right)^2 + 2\frac{\partial v}{\partial y} \frac{\partial w}{\partial z}.
+   \end{aligned}
+\end{equation}
+取系综平均可得
+\begin{equation}
+   \left< \left( \frac{\partial u}{\partial x} \right)^2 \right> = \left<\left( \frac{\partial v}{\partial y}  \right)^2 \right> + \left<\left( \frac{\partial w}{\partial z}  \right)^2 \right> + \left<2\frac{\partial v}{\partial y} \frac{\partial w}{\partial z}
+   \right>
+   \label{eq:31}
+\end{equation}
+由各向同性湍流可得\cite{10.2307/96557}
+\begin{equation}
+   \left< \left( \frac{\partial u}{\partial x} \right)^2 \right> =\left< \left( \frac{\partial v}{\partial y} \right)^2 \right> =\left< \left( \frac{\partial w}{\partial z} \right)^2 \right>
+\end{equation}
+所以\cref{eq:31}化为
+\begin{equation}
+   \left< \left( \frac{\partial u}{\partial x} \right)^2 \right> = -2 \left<\frac{\partial v}{\partial y} \frac{\partial w}{\partial z}
+   \right>
+\end{equation}
+对坐标进行$45^{\circ}$可得
+\begin{equation}
+   \begin{cases}
+	  \sqrt{2} x' & = x + y  \\
+	  \sqrt{2} y' & = -x + y \\
+	  z' = z
+   \end{cases}
+   \label{eq:32}
+\end{equation}
+\begin{equation}
+   \begin{cases}
+	  \sqrt{2} u' & = u + v  \\
+	  \sqrt{2} v' & = -u + v \\
+	  v' = v
+   \end{cases}
+\end{equation}
+Hence
+\begin{equation}
+   \begin{cases}
+	  \frac{\partial u}{\partial x} & =\frac{1}{2}\left(\frac{\partial u^{\prime}}{\partial x^{\prime}}-\frac{\partial v^{\prime}}{\partial x^{\prime}}-\frac{\partial u^{\prime}}{\partial y^{\prime}}+\frac{\partial v^{\prime}}{\partial y^{\prime}}\right) \\
+	  \frac{\partial v}{\partial x} & =\frac{1}{2}\left(\frac{\partial u^{\prime}}{\partial x^{\prime}}+\frac{\partial v^{\prime}}{\partial x^{\prime}}-\frac{\partial u^{\prime}}{\partial y^{\prime}}-\frac{\partial u^{\prime}}{\partial y^{\prime}}\right) \\
+	  \frac{\partial w}{\partial x} & =\frac{1}{\sqrt{2}}\left(\frac{\partial w^{\prime}}{\partial x^{\prime}}-\frac{\partial w^{\prime}}{\partial y^{\prime}}\right)                                                                                          \\
+   \end{cases}
+\end{equation}
+\begin{equation}
+   \begin{cases}
+	  \frac{\partial u}{\partial y} & =\frac{1}{2}\left(\frac{\partial u^{\prime}}{\partial x^{\prime}}-\frac{\partial v^{\prime}}{\partial x^{\prime}}+\frac{\partial u^{\prime}}{\partial y^{\prime}}-\frac{\partial v^{\prime}}{\partial y^{\prime}}\right) \\
+	  \frac{\partial v}{\partial y} & =\frac{1}{2}\left(\frac{\partial u^{\prime}}{\partial x^{\prime}}+\frac{\partial v^{\prime}}{\partial x^{\prime}}+\frac{\partial u^{\prime}}{\partial y^{\prime}}+\frac{\partial v^{\prime}}{\partial y^{\prime}}\right) \\
+	  \frac{\partial w}{\partial y} & =\frac{1}{\sqrt{2}}\left(\frac{\partial w^{\prime}}{\partial x^{\prime}}+\frac{\partial w^{\prime}}{\partial y^{\prime}}\right)                                                                                          \\
+   \end{cases}
+\end{equation}
+\begin{equation}
+   \begin{cases}
+	  \frac{\partial u}{\partial z} & =\frac{1}{\sqrt{2}}\left(\frac{\partial u^{\prime}}{\partial z^{\prime}}-\frac{\partial v^{\prime}}{\partial z^{\prime}}\right) \\
+	  \frac{\partial v}{\partial z} & =\frac{1}{\sqrt{2}}\left(\frac{\partial u^{\prime}}{\partial z^{\prime}}+\frac{\partial v^{\prime}}{\partial z^{\prime}}\right) \\
+	  \frac{\partial w}{\partial z} & =\frac{\partial w^{\prime}}{\partial z^{\prime}}
+   \end{cases}
+\end{equation}
+
+\begin{table}[htpb]
+   \centering
+   \caption{记号说明。}
+   \label{tab:31}
+   \begin{tabular}{ccccccccccc}
+	  \toprule
+	  $\overline{\left(\frac{\partial u}{\partial x}\right)^{2}}$
+	   & $\overline{ \frac{\partial u}{\partial x} \frac{\partial u}{\partial y} }$
+	   & $\overline{{\left(\frac{\partial u}{\partial y}\right)}^{2} }$
+	   & $\overline{  \frac{\partial u}{\partial y} \frac{\partial u}{\partial z} }$
+	   & $\overline{ \frac{\partial u}{\partial x} \frac{\partial v}{\partial x} }$
+	   & $ \overline{\frac{\partial u}{\partial x} \frac{\partial v}{\partial y}} $
+	   & $ \overline{\frac{\partial u}{\partial x} \frac{\partial v}{\partial z}}$
+	   & $\overline{ \frac{\partial u}{\partial y} \frac{\partial v}{\partial x} }$
+	   & $\overline{ \frac{\partial u}{\partial y} \frac{\partial v}{\partial z} }$
+	   & $\overline{ \frac{\partial u}{\partial z} \frac{\partial v}{\partial z}}$   \\
+	   \midrule
+	   $a_{1} $
+	   & $ a_{2} $
+	   & $ a_{3} $
+	   & $ a_{4} $
+	   & $ a_{5} $
+	   & $ a_{6} $
+	   & $ a_{7} $
+	   & $ a_{8} $
+	   & $ a_{9} $
+	   & $ a_{10}$\\
+	   \bottomrule
+   \end{tabular}
+\end{table}
+对\cref{eq:32}求平方，并利用各向同性可得以下等式
+\begin{equation}
+   a_4 = a_7 = a_2 = a_5 = a_{10} = a_9 = 0.
+\end{equation}
+\begin{equation}
+   a_1 = - 2a_6,
+\end{equation}
+\begin{equation}
+   a_1 - a_3 - a_6 - a_8 = 0,
+\end{equation}
+\begin{equation}
+   a_1 - a_3 - a_6 - a_8 = 0,
+\end{equation}
+\begin{equation}
+   a_1 + 2a_8 = 0,
+\end{equation}
+\begin{equation}
+   a_1 = - 2a_6
+\end{equation}
+\begin{equation}
+   a_1 = \frac{1}{2} a_3.
+\end{equation}
+\qed
+
 
 \section{4}
+
 将不可压均匀各向同性湍流中两点纵向速度关联函数与一维能谱之间的傅立 叶积分变换关系
 \begin{equation}
-   \left\langle u^{2}\right\rangle f(r)=\int_{-\infty}^{\infty} \phi_{1}(k) \me^{i k r}\dif k
+   \left\langle u^{2}\right\rangle f(r)=\int_{-\infty}^{\infty} \phi_{1}(k) \me^{\mi k r}\dif k
 \end{equation}
 代入如下两点纵向速度关联函数与三维能谱之间的积分变换关系
 \begin{equation}
@@ -67,15 +200,17 @@
 \end{equation}
 直接通过计算推出
 \begin{equation}
-   E(k)=k^{3} \frac{d}{\dif k}\left[\frac{1}{k} \frac{d \phi_{1}(k)}{\dif k}\right].
+   E(k)=k^{3} \frac{\dif}{\dif k}\left[\frac{1}{k} \frac{\dif \phi_{1}(k)}{\dif k}\right].
 \end{equation}
 或者, 将
 \begin{equation}
    \left\langle u^{2}\right\rangle f(r)=2 \int_{-\infty}^{\infty} E(k)(k r)^{-2}\left(\frac{\sin k r}{k r}-\cos k r\right)\dif k
+   \label{eq:41}
 \end{equation}
 代入傅立叶逆变换关系
 \begin{equation}
-   \phi_{1}(k)=\frac{1}{2 \pi} \int_{-\infty}^{\infty}\left\langle u^{2}\right\rangle f(r) \me^{-i k r} \dif r,
+   \phi_{1}(k)=\frac{1}{2 \pi} \int_{-\infty}^{\infty}\left\langle u^{2}\right\rangle f(r) \me^{-\mi k r} \dif r,
+   \label{eq:42}
 \end{equation}
 进行积分, 推出
 \begin{equation}
@@ -84,8 +219,28 @@
 两个推导过程任选其一完成即可。提示: 第一个推导利用 $\delta$ 函数及其导数的性质; 第二个推导用到由如下积分关系
 \begin{equation}
    \frac{1}{2} \int_{0}^{1}\left(1-k^{2}\right) \cos k x \dif k=\frac{1}{x^{2}}\left(\frac{\sin x}{x}-\cos x\right)
+   \label{eq:43}
 \end{equation}
 带来的余弦变换。
+
+将\cref{eq:41}带入\cref{eq:42}可得
+\begin{equation}
+   \begin{aligned}
+	  \phi_{1}(k) & = \frac{1}{2 \pi} \int_{-\infty}^{\infty}\left\langle u^{2}\right\rangle f(r) \me^{-\mi k r} \dif r \\ 
+				  & = \frac{1}{2 \pi} \int_{-\infty}^{\infty}2 \int_{-\infty}^{\infty} E(\lambda)(\lambda r)^{-2}\left(\frac{\sin \lambda r}{\lambda r}-\cos \lambda r\right)\dif \lambda \, \me^{-\mi k r} \dif r \\
+   \end{aligned}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
 
 
 \section{5}
@@ -100,7 +255,7 @@
 自己从网上或者课题组内部获取实验测量或者直接数值模拟得到的湍流脉动 速度信号的一段长时间的时间序列或者一定样本容量的空间序列。完成下列两 项任务:
 \begin{enumerate}
    \item 计算两点纵向的二阶和三阶速度关联系数 $f(r),\, k(r)$ 并画出曲线 (可以用泰勒冻结假设);
-   \item 根据 $f(r)$ 计一维能谱 $\phi_{1}(k)$ 和三维能谱 $E(k)$ (在 假设各向同性的情况下利用教材公式 (2.3.23)), 并画出曲线。
+   \item 根据 $f(r)$ 计算一维能谱 $\phi_{1}(k)$ 和三维能谱 $E(k)$ (在 假设各向同性的情况下利用教材公式 (2.3.23)), 并画出曲线。
 \end{enumerate}
 
 
