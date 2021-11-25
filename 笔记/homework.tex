@@ -1,0 +1,223 @@
+\documentclass[12pt]{ctexart}
+\input{setting.tex}
+\setcounter{secnumdepth}{2}
+\usepackage{bm}
+\usepackage{autobreak}
+\usepackage{amsmath}
+% \setlength{\parindent}{2em}
+% \graphicspath{{fig/}}
+
+
+%pdf 文件设置
+\hypersetup{
+   pdfauthor={袁磊祺},
+   pdftitle={Notes}
+}
+
+\title{
+   \vspace{-1in} 	
+   \usefont{OT1}{bch}{b}{n}
+   \normalfont \normalsize \textsc{\LARGE Peking University}\\[1cm] % Name of your university/college \\ [25pt]
+   \horrule{0.5pt} \\[0.5cm]
+   \huge \bfseries{Notes} \\
+   \horrule{2pt} \\[0.5cm]
+}
+\author{
+   \normalfont 								\normalsize
+   College of Engineering \quad 2001111690  \quad 袁磊祺\\	\normalsize
+   \today
+}
+\date{}
+
+\begin{document}
+
+% \input{setc.tex}
+
+\maketitle
+
+\section{卡门--豪沃思方程}
+
+
+N--S 
+\begin{equation}
+   \frac{\partial R_{ij}}{\partial t} - \frac{\partial }{\partial r_m} \left( S_{imj} + S_{jmi} \right) = 2 \nu \nabla^2 R_{ij}
+\end{equation}
+K--H
+\begin{equation}
+   \frac{\partial \left( \left<	u^2 \right> f \right) }{\partial t}  - \left< u^2 \right> ^{\frac{3}{2}} \left( k' + \frac{4k}{r} \right) = 2 \nu \left< u^2 \right> \left( f'' + \frac{4f'}{r} \right) 
+\end{equation}
+自模拟假设（自保持，自相似）$f(r,t),\, k(r,t),\, \left<	u^2 \right>(t)$ 引入（微尺度）$\lambda(t)$ 
+
+设 $f(r,t) = F\left( \frac{r}{\lambda(t)} \right) ,\quad k(r,t) = K\left( \frac{r}{\lambda (t)} \right) $
+\begin{equation}
+   \frac{\partial \left( r^4 \left<	u^2 \right> f \right) }{\partial t}  - \left< u^2 \right> ^{\frac{3}{2}} \left(r^4 k\right)' = 2 \nu \left< u^2 \right> \left(r^4f'\right)'
+\end{equation}
+\begin{equation}
+   \frac{\partial \int_{0}^{+\infty}\left( r^4 \left<	u^2 \right> f \right) \dif r }{\partial t}  - \left< u^2 \right> ^{\frac{3}{2}} \left(r^4 k\right)  \big|_{0}^{+\infty} = 2 \nu \left< u^2 \right> \left(r^4f'\right)\big|_{0}^{+\infty}
+\end{equation}
+Loitsansky 积分不变量
+\begin{equation}
+   \left< u^2 \right> \int_{0}^{\infty} r^4 f \dif r = \Lambda_0
+\end{equation}
+与时间无关的假设， $r^4 f' \to 0$.
+Taylor 展开结果：
+\begin{equation}
+   f = 1 - \frac{1}{2} \left( \frac{r}{\lambda} \right)^2 + \frac{f''''(0)}{24}r^4 + \cdots
+\end{equation}
+\begin{equation}
+   k = \frac{k'''(0)}{6}r^3 + \cdots
+\end{equation}
+\begin{equation}
+   \frac{\partial \left< u^2 \right>f}{\partial t}  = \frac{\dif \left< u^2 \right>}{\dif t} - \frac{1}{2} \left( \frac{r}{\lambda} \right)^2 \frac{\dif \left< u^2 \right>}{\dif t} + \frac{r^2}{\lambda^3} \frac{\dif \lambda}{\dif t} + \cdots
+\end{equation}
+\begin{equation}
+   k' + \frac{4k}{r} =  \frac{k'''(0)}{2} r^2 + \frac{2}{3}k'''(0) r^2 + \cdots = \frac{7}{6} k'''(0) r^2 + \cdots
+\end{equation}
+\begin{equation}
+   f'' + \frac{4f'}{r} = - \frac{1}{\lambda^2} - \frac{4}{\lambda^2} + \cdots = -\frac{5}{\lambda^2} + \cdots
+\end{equation}
+\begin{equation}
+   \frac{\dif \left< u^2 \right>}{\dif t} = -10 \nu \frac{\left< u^2 \right>}{\lambda^2}
+\end{equation}
+\begin{equation}
+   \frac{\dif }{\dif t} \left< \omega^2 \right> = \frac{7}{3\sqrt{15}} \left< \omega^2 \right>^{\frac{3}{2}} \left( S - \frac{2G}{R_{\lambda}} \right) 
+\end{equation}
+\begin{equation}
+   S \equiv - \lambda^3 k'''(0),\quad G \equiv \lambda^4 f''''(0),\quad R_{\lambda} \equiv \frac{\left< u^2 \right>^{\frac{1}{2}}\lambda}{\nu}
+\end{equation}
+
+\section{HIT衰变后期规律}
+$k$ 忽略（惯性项近似为$0$ ）
+\begin{equation}
+   \frac{\partial \left< u^2 \right>f}{\partial t}  = 2\nu \left<u^2 \right> \left( f'' + \frac{4f'}{r} \right) 
+\end{equation}
+设 $f = F\left( \frac{r}{\lambda(t)} \right) $,则$\xi \equiv \frac{r}{\lambda(t)}$
+\begin{equation}
+   \frac{\dif \left<u^2 \right>}{\dif t} F + \left< u^2 \right> F' \left( - \frac{\xi}{\lambda} \frac{\dif  \lambda}{\dif t} \right) = 2 \nu \left< u^2 \right>  \left( \frac{F''}{\lambda^2} + \frac{4F'}{r\lambda} \right) 
+\end{equation}
+\begin{equation}
+   -10 \nu \frac{\left< u^2 \right>}{\lambda^2} \left( -\xi \lambda \frac{\dif \lambda}{\dif t} \right) F'
+\end{equation}
+\begin{equation}
+   -10 \nu F = 2 \nu \left( F'' + \frac{4F'}{\xi} \right)  + F' \xi \lambda \frac{\dif \lambda}{\dif t}
+\end{equation}
+\begin{equation}
+   F'' + \frac{4F'}{\xi} + F' \xi \frac{\lambda}{2\nu} \frac{\dif \lambda}{\dif t} + 5F = 0
+\end{equation}
+\begin{equation}
+   \alpha = \frac{\lambda}{2\nu} \frac{\dif \lambda}{\dif t} = \frac{1}{4\nu} \frac{\dif  \lambda^2}{\dif t} \implies \text{常数}
+\end{equation}
+\begin{equation}
+   \lambda^2 = 4\nu (t-t_0) \alpha
+\end{equation}
+\begin{equation}
+   \frac{\dif \left<u^2 \right>}{\dif t} = -10 \nu \frac{\left< u^2 \right>}{4\nu\alpha(t-t_0)}
+\end{equation}
+\begin{equation}
+   \left< u^2 \right> = A (t-t_0)^{-\frac{5}{2\alpha}}
+\end{equation}
+\begin{equation}
+   \left<u^2 \right> \int_{0}^{+\infty} r^4 f \dif r = \left< u^2 \right> \lambda^5 \int_0^{+\infty} \xi^5 F(\xi) \dif \xi = \Lambda_0 \implies \alpha = 1.
+\end{equation}
+\begin{equation}
+   \left< u^2 \right> \sim (t-t_0)^{\frac{5}{2}}
+\end{equation}
+\begin{equation}
+   F'' + \left( \xi + \frac{4}{\xi} \right) F' + 5F = 0
+\end{equation}
+设$x = \xi^2,\quad F(\xi) = y(x)$
+\begin{equation}
+   F' = y' 2\xi
+\end{equation}
+\begin{equation}
+   F'' = 2y' + y'' 4x
+\end{equation}
+\begin{equation}
+   4xy'' + \left( \xi + \frac{4}{\xi} \right) 2\xi y' + 5y = 0
+\end{equation}
+\begin{equation}
+   4xy'' + (2x + 10)y' + 5y = 0
+\end{equation}
+设$y=\me^{` x`}$
+\begin{equation}
+   y' = \beta y,\quad y'' = \beta^2 y
+\end{equation}
+\begin{equation}
+   4x\beta^2 y + (2x+8) \beta y + 5y =0
+\end{equation}
+\begin{equation}
+   4x\beta^2 y + 2x\beta + 10\beta + 5 = 0
+\end{equation}
+\begin{equation}
+   4\beta^2 + 2\beta = 0 \implies \beta = - \frac{1}{2}
+\end{equation}
+\begin{equation}
+   F(\xi) = C \me^{-\frac{\xi^2}{2}}
+\end{equation}
+\begin{equation}
+   f(r,t) = C \me^{-\frac{1}{2} \frac{r^2}{4\nu(t-t_0)}} = C \me^{-\frac{r^2}{8\nu(t-t_0)}} \implies f = \me^{-\frac{r^2}{8\nu(t-t_0)}}
+\end{equation}
+谱空间
+\begin{equation}
+   \frac{\partial }{\partial t} \Phi_{ij} - \mi m_m \left( \Gamma_{imj} + \Gamma_{jmi} \right) = -2 \nu k^2 \Phi_{i} 
+\end{equation}
+缩并 $i,$
+\begin{equation}
+   \Phi_{ij} = \frac{E}{4\pi k^4}(k^2\delta_{ij}-k_i k_j)
+\end{equation}
+\begin{equation}
+   \Gamma_{ijl} = \mi \Gamma \left( k_i k_j k_l - \frac{k^2}{2} (k_i\delta_{jl} + k_j \delta_{il}) \right) 
+\end{equation}
+\begin{equation}
+   \Gamma_{imi} = \mi \Gamma \left( k^2k_m - \frac{k^2}{2} (k_m + 3k_m) \right) = - \mi k^2 \Gamma k_m
+\end{equation}
+\begin{equation}
+   \frac{1}{2\pi k^2} \frac{\partial E}{\partial t}  - 2k^4 \Gamma = -2 \nu k^2 \frac{E}{2\pi k^2}
+\end{equation}
+\begin{equation}
+   \left( \frac{\partial }{\partial t} + 2\nu k^2 \right) E = 4\pi k^6 \Gamma \equiv T(k,t) 
+\end{equation}
+\begin{equation}
+   \frac{\partial }{\partial t} \int_0^k E(k,t) \dif k - \int_0^k T(k,t)\dif k = -2 \nu \int_0^k k^2 E \dif k \equiv \Pi(k,t) = \int_k^{\infty} T \dif k
+\end{equation}
+$T$ 忽略
+\begin{equation}
+   \frac{\partial E}{\partial t} = -2 \nu k^2 E \implies E(k,t) = E_0(k) \me^{-2\nu k^2t}
+\end{equation}
+设$E = V^2 l F(kl)$ 用 Loistansky 不变量可得$ E_0(k) = ck^4$
+
+Kolmogorov 1941 理论
+
+\begin{enumerate}
+   \item 展示湍流（一般湍流）在Re极大时，在局部为均匀各向同性（远离边界，奇点），在增量意义下。$n$ 点联合p.d.f（增量）只依赖于$n$ 点构型形状、大小与位置、时刻及方位无关。由此引入结构函数的概念。
+   \item 在Re极大时，小尺度范围为普适平衡。$ \frac{\partial }{\partial t} \left<\cdot \right> \approx 0$,统计特性$\left<\cdot \right>$ 只依赖于$\left<\varepsilon\right>,\nu$
+   \item 在Re极大时，小尺度范围的低波数段，统计量只依赖于$\left<\epsilon \right>$ （第二相似性假设）
+\end{enumerate}
+\begin{equation}
+   S_2(r) = B(\epsilon, \nu, r)
+\end{equation}
+\begin{equation}
+   \eta \equiv \left( \frac{\nu^3}{\epsilon} \right) ^{\frac{1}{4}},\quad v \equiv (\epsilon \eta)^{\frac{1}{3}}
+\end{equation}
+\begin{equation}
+   S_2(r) = v^2 F \left( \frac{r}{\eta} \right),\quad S_3(r) = v^3 G(\frac{r}{\eta}),\quad \frac{\eta v}{\nu} = 1
+\end{equation}
+\begin{equation}
+   S_2 = B(r,\epsilon),\quad v \sim (\epsilon r)^{\frac{1}{3}},\quad S_2 = C_2 (\epsilon r)^{\frac{2}{3}}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+% \nocite{*}
+
+% \input{bib.tex}
+
+\end{document}

@@ -6,7 +6,7 @@
 \usepackage{autobreak}
 \usepackage{amsmath}
 \setlength{\parindent}{2em}
-\graphicspath{{../}}
+\graphicspath{{fig/}}
 
 
 %pdf 文件设置
@@ -43,16 +43,80 @@
 
 \section{1}
 
-\textsf{\hspace{-2em}\sf  \textbf{解:}}
 
-对于归一化的一维光滑平稳高斯过程 $X(t)$, 即满足 $\langle X\rangle=0,\left\langle X^{2}\right\rangle=1$, 记 $\dot{X}=$ $\dif X / \dif t$, 证明如下两个条件平均关系: $\langle\ddot{X} \mid X=x\rangle=-\left\langle\dot{X}^{2}\right\rangle x ;\, \left\langle\dot{X}^{2} \mid X=x\right\rangle=\left\langle\dot{X}^{2}\right\rangle$ 。 提示: 应该首先说明或者证明 $\dot{X}(t)$ 和 $\ddot{X}(t)$ 也是高斯过程。
+对于归一化的一维光滑平稳高斯过程 $X(t)$,  即满足 $\langle X\rangle=0,\, \left\langle X^{2}\right\rangle=1$, 记 $\dot{X}=\frac{\dif X}{\dif t}$, 证明如下两个条件平均关系: $\langle\ddot{X} \mid X=x\rangle=-\left\langle\dot{X}^{2}\right\rangle x ;\, \left\langle\dot{X}^{2} \mid X=x\right\rangle=\left\langle\dot{X}^{2}\right\rangle$ 。 提示: 应该首先说明或者证明 $\dot{X}(t)$ 和 $\ddot{X}(t)$ 也是高斯过程。
+
+根据\cite[P45]{pan}可得正态随机过程的导数也符合正态率，并且$X(t),\dot{X}(t)$是独立的,所以
+\begin{equation}
+   \left< \dot{X}^2 \big| X = x \right> = \left< \dot{X}^2 \right>.
+\end{equation}
+
+写出$X_1(-\tau),X_2(0),X_3(\tau)$ 三个随机变量的概率函数有
+\begin{equation}
+   f(X_1,-\tau;X_2,0;X_3,\tau) = \frac{(2\pi)^{-\frac{3}{2}}}{\sigma^3\sqrt{D}}\exp \left[ - \frac{1}{2D\sigma^2} \sum_{i,k}^3 D_{ik} x_i x_k \right] 
+\end{equation}
+其中$D$是矩阵
+\begin{equation}
+   R_{ik} = 
+   \begin{pmatrix} 
+	  1 & R(\tau) & R(2\tau) \\
+	  R(\tau) & 1 & R(\tau) \\
+	  R(2\tau) & R(\tau) & 1
+   \end{pmatrix} 
+\end{equation}
+矩阵的行列式，$D_{ik}$是元素$R_{ik}$ 的余子式。在假设$R'(0) = 0$ 的情况下，根据
+\begin{equation}
+   f''(t) = \lim_{\tau\to 0} \frac{f(t+\tau) - 2f(t) + f(t-\tau)}{\tau^2}
+\end{equation}
+可计算得
+\begin{equation}
+   \begin{aligned}
+	  \langle\ddot{X} \mid X=x\rangle & = \lim_{\tau\to 0} \left<  \frac{X_{1}(t+\tau) - 2X_2(t) + X_3(t-\tau)}{\tau^2}	\right> \\
+									  &= \lim_{\tau\to 0} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty}  \frac{X_{1}(t+\tau) - 2X_2(t) + X_3(t-\tau)}{\tau^2} f(X_1,-\tau;X_2,0;X_3,\tau) \dif X_1 \dif X_3 \\
+									  &= - \left< \dot{X}^2 \right> x \\
+   \end{aligned}
+\end{equation} \qed
+
+
+
+
 
 \section{2}
-对于不可压均匀各向同性湍流, 试给出两空间点的涡量速度关联张量的最简 表达式。
+对于不可压均匀各向同性湍流,试给出两空间点的涡量速度关联张量的最简表达式。
+
+\textsf{\hspace{-2em}\sf  \textbf{解:}}
+
+定义二元涡量速度关联函数
+\begin{equation}
+   R ( \bm{r}, \bm{a} , \bm{b}  ) \equiv \left< \omega_{a} u_{b}' \right> = R_{ij} a_i b_j.
+\end{equation}
+由各向同性可得
+\begin{equation}
+   R_{ij}(\bm{r}) = A_1(r^2) r_i r_j + B_1(r^2) \delta_{ij}
+\end{equation}
+\begin{equation}
+   R_{11} = \left< \omega_1 u_1' \right> \equiv \left< \omega u \right> f(r) = A_1 r^2 + B_1
+\end{equation}
+\begin{equation}
+   R_{22} = \left< \omega_2 u_2' \right> \equiv \left< \omega u \right> g(r) = B_1
+\end{equation}
+其中$\left< \omega u \right> = \frac{1}{3} \left< \bm{\omega} \cdot \bm{u}\right>$.由于速度有无散条件
+\begin{equation}
+   \nabla \cdot \bm{u} = 0,
+\end{equation}
+所以有
+\begin{equation}
+   \frac{\partial R_{ij}}{\partial r_j} = 0,
+\end{equation}
+得
+\begin{equation}
+   R_{ij} = \left< \omega u \right> \left[ - \frac{1}{2r} \frac{\partial f}{\partial r} r_{i} r_{j} + \left( f + \frac{r}{2} \frac{\partial f}{\partial r} \right) \delta_{ij} \right] .
+\end{equation}
+其中$f$是关于 $r$ 的函数。
 
 
 \section{3}
-对于不可压均匀各向同性湍流, 根据不可压条件 (连续性方程) 和湍流统计量 与构型（configuration）的方向无关的特点, 通过标架旋转证明一点的速度梯 度满足统计关系:
+对于不可压均匀各向同性湍流,根据不可压条件(连续性方程)和湍流统计量与构型（configuration）的方向无关的特点,通过标架旋转证明一点的速度梯度满足统计关系:
 \begin{equation}
    \left\langle\left(\frac{\partial u_{1}}{\partial x_{2}}\right)^{2}\right\rangle=2\left\langle\left(\frac{\partial u_{1}}{\partial x_{1}}\right)^{2}\right\rangle.
 \end{equation}
@@ -99,7 +163,7 @@
    \begin{cases}
 	  \sqrt{2} x' & = x + y  \\
 	  \sqrt{2} y' & = -x + y \\
-	  z' = z
+	  z' & = z
    \end{cases}
    \label{eq:32}
 \end{equation}
@@ -107,7 +171,7 @@
    \begin{cases}
 	  \sqrt{2} u' & = u + v  \\
 	  \sqrt{2} v' & = -u + v \\
-	  v' = v
+	  v' & = v
    \end{cases}
 \end{equation}
 Hence
@@ -228,19 +292,27 @@ Hence
    \begin{aligned}
 	  \phi_{1}(k) & = \frac{1}{2 \pi} \int_{-\infty}^{\infty}\left\langle u^{2}\right\rangle f(r) \me^{-\mi k r} \dif r \\ 
 				  & = \frac{1}{2 \pi} \int_{-\infty}^{\infty}2 \int_{-\infty}^{\infty} E(\lambda)(\lambda r)^{-2}\left(\frac{\sin \lambda r}{\lambda r}-\cos \lambda r\right)\dif \lambda \, \me^{-\mi k r} \dif r \\
+				  & = \frac{1}{ \pi} \int_{-\infty}^{\infty}E(\lambda) \lambda^{-2} \int_{-\infty}^{\infty}  r^{-2}\left(\frac{\sin \lambda r}{\lambda r}-\cos \lambda r\right) \me^{-\mi k r} \dif r \dif \lambda \\
+				  & = \frac{1}{ \pi} \int_{-\infty}^{\infty}E(\lambda) \lambda^{-2} \int_{-\infty}^{\infty}  r^{-2}\left(\frac{\sin \lambda r}{\lambda r}-\cos \lambda r\right) \cos(kr) \dif r \dif \lambda \\
    \end{aligned}
 \end{equation}
-
-
-
-
-
-
-
-
-
-
-
+其中
+\begin{equation}
+   \begin{aligned}
+	 & 4\lambda\int_{-\infty}^{\infty}  r^{-2}\left(\frac{\sin \lambda r}{\lambda r}-\cos \lambda r\right) \cos(kr) \dif r \\ 
+	  = & \left(\lambda-k\right)\left(\lambda+k\right)\operatorname{Si}\left(\left(\lambda+k\right)r\right)+\left(\lambda-k\right)\left(\lambda+k\right)\operatorname{Si}\left(\left(\lambda-k\right)r\right)\\
+		& +\frac{2k\sin\left(kr\right)\sin\left(\lambda r\right)+2\lambda \cos\left(kr\right)\cos\left(\lambda r\right)}{r}-\frac{2\cos\left(kr\right)\sin\left(\lambda r\right)}{r^2}
+   \end{aligned}
+\end{equation}
+其中
+\begin{equation}
+   \mathrm{Si}(x) = \int^x_0 \frac{\sin(t)}{t} \dif t,\quad \mathrm{Si}(+\infty) = \frac{\pi}{2}.
+\end{equation}
+只有当$\left( \lambda + k \right),\, \left( \lambda - k \right) $ 同号时，积分才不为$0$. 又考虑到$k>0$, 所以 $\lambda > k$, 则
+\begin{equation}
+   \phi_{1}(k)=\frac{1}{2} \int_{k}^{\infty}\left(1-\frac{k^{2}}{\lambda^{2}}\right) \frac{E(\lambda)}{\lambda} \dif \lambda.
+\end{equation}
+\qed
 
 
 \section{5}
@@ -249,14 +321,78 @@ Hence
 \begin{equation}
    \left\langle u^{2}\right\rangle^{\frac{3}{2}} k(r)=8 \pi \int_{0}^{\infty} \frac{k^{5} \Gamma(k)}{(k r)^{4}}\left(3 \sin k r-3 k r \cos k r-(k r)^{2} \sin k r\right)\dif k.
 \end{equation}
+教材并没有明说$(2.3.42)$是怎么得到的，假设它是由 $(2.3.41)$的反变换得到的，那么下面给出另外一种证明方法。 $(2.3.41)$ 上面的一个式子为：
+\begin{equation}
+   \frac{1}{r^2} \frac{\partial }{\partial r} [r^3 K(r)] = 8 \pi \int_{0}^{+\infty} k^6 \Gamma(k) \frac{\sin kr}{kr} \dif k.
+\end{equation}
+把$r^2$ 乘过去再积分得
+\begin{equation}
+   \begin{aligned}
+	  r^3 K(r) & =  8 \pi \int_{0}^{+\infty} \int_{0}^r x^2 k^6 \Gamma(k) \frac{\sin kx}{kx} \dif x \dif k\\
+			   &= 8 \pi \int_{0}^{+\infty} k^3 \Gamma(k) \left( \sin(kr) - k r \cos(kr) \right) \dif k \\
+   \end{aligned}
+\end{equation}
+带入
+\begin{equation}
+   K(r) = \left\langle u^{2}\right\rangle^{\frac{3}{2}} \frac{1}{r^4} \frac{\partial }{\partial r} (r^4k) 
+\end{equation}
+得
+\begin{equation}
+   \left\langle u^{2}\right\rangle^{\frac{3}{2}} \frac{1}{r} \frac{\partial }{\partial r} (r^4k)  = 8 \pi \int_{0}^{+\infty} k^3 \Gamma(k) \left( \sin(kr) - k r \cos(kr) \right) \dif k.
+\end{equation}
+再次积分可得
+\begin{equation}
+   \begin{aligned}
+	  \left\langle u^{2}\right\rangle^{\frac{3}{2}} r^4k & = 8 \pi \int_{0}^{+\infty} \int_{0}^r x k^3 \Gamma(k) \left( \sin(kx) - k x \cos(kx) \right) \dif x \dif k\\
+														 &= 8 \pi \int_{0}^{+\infty}   k \Gamma(k) ( 3 \sin(kr) - 3 k r \cos(k r) - k^2 r^2 \sin(kr) )  \dif k.\\
+   \end{aligned}
+\end{equation}
+\qed
+
+
+
 
 \section{6}
 
 自己从网上或者课题组内部获取实验测量或者直接数值模拟得到的湍流脉动 速度信号的一段长时间的时间序列或者一定样本容量的空间序列。完成下列两 项任务:
 \begin{enumerate}
    \item 计算两点纵向的二阶和三阶速度关联系数 $f(r),\, k(r)$ 并画出曲线 (可以用泰勒冻结假设);
-   \item 根据 $f(r)$ 计算一维能谱 $\phi_{1}(k)$ 和三维能谱 $E(k)$ (在 假设各向同性的情况下利用教材公式 (2.3.23)), 并画出曲线。
+   \item 根据 $f(r)$ 计算一维能谱 $\varphi_{1}(k)$ 和三维能谱 $E(k)$ (在 假设各向同性的情况下利用教材公式 (2.3.23)), 并画出曲线。
 \end{enumerate}
+
+\textsf{\hspace{-2em}\sf  \textbf{解:}}
+
+这里选取的是杨延涛课题组的RB对流算例中的流场数据。上板冷却，下板加热， $\mathrm{Ra} = 1 \times 10^{8}$ 中间区域近似为各向同性均匀湍流，利用泰勒冻结假设，对某一水平方向算相关函数取平均后可得\cref{fig:f-r,fig:k-r}.
+\begin{figure}%
+   \centering
+   \subfigure[二元速度关联函数$f$.]{\label{fig:f-r}\includegraphics[width=.45\textwidth]{f-r.eps}}\quad
+   \subfigure[三元速度关联函数$k$.]{\label{fig:k-r}\includegraphics[width=.45\textwidth]{k-r.eps}}
+   \caption{近似均匀各向同性同性湍流中的关联函数。}
+   % \label{fig:Nu-k}
+\end{figure}
+三维能谱$E(k)$ 和$f(r)$ 的关系是
+\begin{equation}
+   E(k) = \frac{1}{\pi} \int_{0}^{+\infty} \left< u^2 \right> f(r) (kr)^{2} \left( \frac{\sin kr}{kr} - \cos kr \right) \dif r.
+\end{equation}
+一维能谱$\varphi(k)$ 和$E(k)$ 的关系是
+\begin{equation}
+   \varphi_1(k_1) = \frac{1}{2} \int_{k_1}^{+\infty} \left( 1 - \frac{k_1^2}{k^2} \frac{E(k)}{k}\right) \dif k. 
+\end{equation}
+画图可得\cref{fig:E-k,fig:phi-k}.
+\begin{figure}
+   \centering
+   \subfigure[三维能谱$E(k)$. ]{\label{fig:E-k}\includegraphics[width=.45\textwidth]{E-k.eps}}\quad
+   \subfigure[一维能谱$\varphi(k)$.]{\label{fig:phi-k}\includegraphics[width=.45\textwidth]{phi-k.eps}}
+   \caption{能谱图。}
+   % \label{fig:Nu-k}
+\end{figure}
+
+
+
+
+
+
+
 
 
 
