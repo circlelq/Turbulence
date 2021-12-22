@@ -206,6 +206,431 @@ Kolmogorov 1941 理论
    S_2 = B(r,\epsilon),\quad v \sim (\epsilon r)^{\frac{1}{3}},\quad S_2 = C_2 (\epsilon r)^{\frac{2}{3}}
 \end{equation}
 
+衰变后期 $\lambda^2 = 4 \nu (t-t_0)$
+
+纵串(L. F. Richardson 1922) cascade 大涡发展成小涡，非线性作用（惯性）
+\begin{equation}
+   \begin{aligned}
+	  \left< \varepsilon \right>  & = \nu \left<  \abs{\abs{ \nabla \bm{u} }}^2 \right> \\
+								  &= \nu \left< \omega^2 \right>  \\
+								  &= 15\nu \frac{\left< u^2 \right> }{\lambda^2} \\
+   \end{aligned}
+\end{equation}
+\begin{equation}
+   f(r) = 1 - \frac{1}{2} \left( \frac{r}{\lambda} \right)^2 + o(\lambda^2)
+\end{equation}
+
+\begin{enumerate}
+   \item 局部各向同性
+   \item 第一相似性 $\varepsilon, \nu$ 平衡范围
+   \item 第二相似性  $\varepsilon$
+\end{enumerate}
+纵向
+\begin{equation}
+   S_2  \equiv \left< \left( ( \bm{u} (\bm{x} + \bm{r} ) - \bm{u} (\bm{x} )) \frac{\bm{r} }{r} \right)^2  \right>  = \left< \left( u_2 - u_1 \right)^2 \right> = \left( \varepsilon \eta \right)^{\frac{2}{3}} B_2 (\frac{r}{\eta})
+\end{equation}
+\begin{equation}
+   S_3 \equiv \left< \left( u_2 - u_1 \right)^3 \right> = (\varepsilon \eta)B_3\left( \frac{r}{\eta} \right) 
+\end{equation}
+\begin{equation}
+   S_2 (r) = C_2 (\varepsilon r)^{\frac{2}{3}} \quad \text{实验上基本成立}
+\end{equation}
+\begin{equation}
+   S_3 (r) = C_3 (\varepsilon r)
+\end{equation}
+$C_2,C_3$ 是普适常数.
+
+Obukhov (1941) 在平衡范围
+\begin{equation}
+   E(k) = \varepsilon^{\frac{1}{4}} \nu^{\frac{5}{4}} F(k\eta)
+\end{equation}
+惯性范围 $E(k) = C_k \varepsilon^{\frac{2}{3}} k^{-\frac{5}{3}}$, $-\frac{5}{3}$ 定律$E(k) \sim k^{-\frac{5}{3}}$
+
+K41推广：$p$ 阶矩 $( p \in \mathbb{N} ) $
+\begin{equation}
+   S_p (r) \sim (\varepsilon r)^{\frac{p}{3}} C_p \implies p_r (\delta u) = ?
+\end{equation}
+\begin{equation}
+   S_p(r) = \left( \frac{r}{L} \right) ^{\frac{p}{3}} S_p(L) \implies p_r (\delta u) = p_L\left(\delta u\left( \frac{r}{L} \right)^{-\frac{1}{3}}\right) \left(\frac{r}{L} \right)^{-\frac{1}{3}}
+\end{equation}
+
+K-H: 
+\begin{equation}
+   \frac{\partial \left( \left< u^2 \right> f \right) }{\partial t}  - \left< u^2 \right>^{\frac{3}{2}} \left( k' + \frac{4k}{r} \right) = 2\nu \left< u^2 \right> \left< f'' + \frac{4f'}{r} \right> 
+\end{equation}
+$f,k \to (S_2,S_3)$, $S_3 =  \left< u^2 \right>^{\frac{3}{2}}k$
+\begin{equation}
+   2\left< u^2 \right> -S_2 = 2\left< u^2 \right>  f
+\end{equation}
+\begin{equation}
+   2 \frac{\partial \left< u^2 \right> }{\partial t} - \frac{\partial S_2}{\partial t} - \frac{1}{3} \left( S_3' + \frac{4S_3}{r} \right) = -2 \nu \left( S_2'' + \frac{4S_2'}{r} \right) 
+\end{equation}
+\begin{equation}
+   -\frac{4}{3} \varepsilon - \frac{1}{3} \left( S_3' + \frac{4S_3}{r} \right) = -2 \nu \left( S_2'' + \frac{4S_2'}{r} \right) 
+\end{equation}
+乘$r^4$
+\begin{equation}
+   - \frac{r}{3} \varepsilon  r^4 - \frac{1}{3} \left( r^4 S_3 \right) ' = -2 \nu \left( S_2' r^4 \right) '
+\end{equation}
+积分$r$
+\begin{equation}
+   - \frac{4}{15} \varepsilon r^5 - \frac{1}{3} r^4 S_3 = -2 \nu S_2' r^4
+\end{equation}
+\begin{equation}
+   S_3 = - \frac{4}{5} \varepsilon r + 6\nu r \frac{\dif S_2}{\dif r}
+\end{equation}
+当$\nu \to 0$时
+\begin{equation}
+   S_3(r) = - \frac{4}{5} \varepsilon r
+\end{equation}
+设一个$S_2$ 的函数，计算$E(k)$
+\begin{equation}
+   S_2 = C_2 \left( \varepsilon r \right)^{\frac{2}{3}},\quad E(k) = C_k \varepsilon^{\frac{2}{3}} k^{-\frac{5}{3}}
+\end{equation}
+都是$-\frac{5}{3}$ 的关系
+\begin{equation}
+   \phi_1(k) = C_1 \varepsilon^{\frac{2}{3}} k^{-\frac{5}{3}}
+\end{equation}
+\begin{equation}
+   C_k = C_1 \left( -\frac{5}{3} \right) \left( - \frac{5}{3} - 2 \right) 
+\end{equation}
+
+一维能谱 $\phi_1(k)$
+\begin{equation}
+   \begin{aligned}
+	  \left< u^2 \right> f(r) & = \int_{-\infty}^{+\infty} \phi_1 \me^{\mi kr} \dif k \\
+							  &= 2 \int_{0}^{+\infty} \phi_1 \cos k r \dif k\\
+   \end{aligned}
+\end{equation}
+\begin{equation}
+   S_2 = 2 \left< u^2 \right>  - 4 \int_{0}^{\infty} \phi_1 \cos kr \dif k 
+\end{equation}
+\begin{equation}
+   \begin{aligned}
+	  S_2 & = 4 \int_{0}^{\infty} \phi_1(1- \cos kr) \dif k\\
+		  &= 4 \int_{0}^{\infty} C_1 \varepsilon^{\frac{2}{3} k^{-\frac{5}{3}}} (1 - \cos kr ) \dif k \\
+		  &= 4C_1 \varepsilon^{\frac{2}{3}} \int_{0}^{\infty} k^{-\frac{5}{3}} (1-\cos kr) \dif k 
+   \end{aligned}
+\end{equation}
+用复变函数积分得
+\begin{equation}
+   \int_{0}^{\infty} k^{-\frac{5}{3}} \cos kr \dif k  = \frac{\Gamma \left( \frac{1}{3} \right) }{2\sqrt[3]{r} }
+\end{equation}
+\begin{equation}
+   C_2 = 3 \Gamma\left(\frac{1}{3}\right) C_1
+\end{equation}
+
+能谱方程
+\begin{equation}
+   \frac{\partial E}{\partial t} = T - 2 \nu k^2E
+\end{equation}
+$T(k,t)$ 输运,普适平衡
+\begin{equation}
+   \begin{aligned}
+	  \frac{\partial }{\partial t}  \int_{0}^{k} E \dif k & = \int_{0}^{k} T \dif k - 2 \nu \int_{0}^{k}  k^2 E \dif k \\
+														  &= - \int_{k}^{\infty} T \dif k - \left( \varepsilon - 2 \nu \int_{k}^{\infty} k^2 E \dif k  \right)   \\
+   \end{aligned}
+\end{equation}
+\begin{equation}
+   \frac{\partial }{\partial x} \int_{0}^{k} E \dif k \approx \frac{\partial }{\partial t} \int_{0}^{\infty} E \dif k  
+\end{equation}
+能流
+\begin{equation}
+   - S \equiv - \int_{k}^{\infty} T \dif k 
+\end{equation}
+\begin{equation}
+   \Pi \equiv \int_{k}^{\infty} E \dif k 
+\end{equation}
+封闭方程
+\begin{equation}
+   S = 2\nu \int_{k}^{\infty} k^2 E \dif k 
+\end{equation}
+
+
+\subsection{封闭方法}
+
+\subsubsection{Obukhov (1940)}
+
+\begin{equation}
+   S = \gamma \int_{k}^{\infty} E \dif k \sqrt{2 \int_{0}^{k} k^2 E \dif k }  
+\end{equation}
+
+Millsaps (1955)
+
+解法：令 $2 \int_{0}^{k} k^2 E \dif k = Z^2 \implies k^2 E = Z\cdot Z'$
+\begin{equation}
+   \gamma \int_{k}^{\infty} E Z = 2 \nu \int_{k}^{\infty} k^2 E \implies \varepsilon - 2 \nu \int_{0}^{k} k^2 E = \gamma Z \int_{k}^{\infty} E \implies\varepsilon - \nu Z^2 = \gamma Z \int_{k}^{\infty} E     
+\end{equation}
+\begin{equation}
+   \frac{\varepsilon}{Z} - \nu Z = g \int_{k}^{\infty} E 
+\end{equation}
+\begin{equation}
+   \left( - \frac{\varepsilon}{Z^2} - \nu \right) Z' = - \gamma E = - \gamma \frac{Z}{k^2}
+\end{equation}
+\begin{equation}
+   \frac{\varepsilon}{Z^2} + \nu = \gamma \frac{Z}{k^2}
+\end{equation}
+其中
+\begin{equation}
+   k^2 = \frac{\gamma Z^3}{\varepsilon + \nu Z^2}
+\end{equation}
+注意到$Z \in \left[0, \sqrt{\frac{\varepsilon}{\nu}}  \right]$ 则 $k^2 \le \frac{\gamma}{2\varepsilon} \left( \frac{\varepsilon}{\nu}^{\frac{3}{2}} \right) \equiv k_{\max}$
+在$k\le k_{\max}$ 内估算（当$k$ 很大时）
+\begin{equation}
+   k^2 \approx \frac{\gamma}{2\varepsilon} Z^3
+\end{equation}
+\begin{equation}
+   Z \approx \left( \frac{2\varepsilon}{\nu} \right)^{\frac{1}{3}} k^{\frac{2}{3}}
+\end{equation}
+\begin{equation}
+   E = \frac{Z Z'}{k^2} = \left( \frac{2\varepsilon}{\nu} \right) ^{\frac{2}{3}} k^{- \frac{5}{3}}
+\end{equation}
+
+
+\subsubsection{Heisonberg--Weizsacker 模型}
+
+\begin{equation}
+   S = 2\gamma \int_{k}^{\infty} \left( k^{-3} E \right) ^{\frac{1}{2}}\dif k \int_{0}^{k} k^2 E \dif k  
+\end{equation}
+
+$k<k_d$ : $E \approx \left( \frac{8\varepsilon}{9\gamma} \right)^{\frac{2}{3}} k^{-\frac{5}{7}} $
+
+$k\ge k_d: E \approx \left( \frac{\gamma\varepsilon}{2\nu^2} \right) ^2 k^{-7}$
+
+Ellison 修正
+\begin{equation}
+   S = \alpha k E \sqrt{2 \int_{0}^{k} k^2 E } 
+\end{equation}
+
+Hinge 修正
+\begin{equation}
+   S = \alpha \int_{0}^{k}  \sqrt{kE} \int_{k}^{\infty} E  
+\end{equation}
+
+
+\subsubsection{Karman 模型 (1948)}
+
+\begin{equation}
+   S = 2\gamma \int_{k}^{\infty} E^{\alpha} k^{\beta} \int_{0}^{k} E^{\frac{3}{2} - \alpha} k^{\frac{1}{2} - \beta}  
+\end{equation}
+
+
+\subsubsection{Kovasznay 模型}
+
+\begin{equation}
+   S = \beta k^{\frac{5}{2}} E^{\frac{3}{2}}
+\end{equation}
+\begin{equation}
+   \begin{cases}
+	  E \sim k^{-\frac{5}{3}}, & k<k_d\\
+	  E = 0, & k\ge k_d
+   \end{cases}
+\end{equation}
+
+
+\subsubsection{Pao YH 模型(1965)}
+
+\begin{equation}
+   S = \sigma(k) E(k) = \alpha ^{-1} \varepsilon^{\frac{1}{3}} k^{\frac{5}{3}} E(k)
+\end{equation}
+\begin{equation}
+   \alpha ^{-1} \varepsilon^{\frac{1}{3}} k^{\frac{5}{3}} E = 2\nu \int_{k}^{\infty} k^2 E 
+\end{equation}
+\begin{equation}
+   \alpha ^{-1} \varepsilon^{\frac{1}{3}} \left[ \frac{5}{3} k^{\frac{2}{3}}E + k^{\frac{5}{3}} \frac{\dif E}{\dif k} \right] = - 2 \nu k^2 E
+\end{equation}
+\begin{equation}
+   \frac{1}{E} \frac{\dif E}{\dif k} = -2 \nu \alpha \varepsilon^{-\frac{1}{3}} k^{\frac{1}{3}} - \frac{5}{3} k^{-1}
+\end{equation}
+\begin{equation}
+   E = C_k \varepsilon^{\frac{1}{3}} k^{-\frac{5}{3}} \me^{-\frac{3}{2}\alpha \nu \varepsilon^{-\frac{1}{3}} k^{\frac{4}{3}}}
+\end{equation}
+若$\bm{v} $ 解析， $k\to \infty, E \sim \me^{-\beta k}$
+
+\section{HIT衰变早期的相似性解}
+
+考虑相似性解： 引入$v,l$ 都只是$t$ 的函数， $E = V^2 l F(x),\, x = kl$, $T = V^3 W(x)$
+\begin{equation}
+   \frac{\partial E}{\partial t} = \frac{\dif }{\dif t} \left( V^2 l \right) F(x) + V^2 l F' k \frac{\dif l}{\dif t} = V^3 W - 2 \nu k^2 V^2 l F
+\end{equation}
+\begin{equation}
+   V^2 \frac{\dif l}{\dif t} x F' + \left[ \frac{\dif }{\dif t} (V^2l) + 2\nu V^2 l^{-1} x^2 \right] F - V^3 W = 0
+\end{equation}
+同除$V^3$
+\begin{equation}
+   \frac{1}{V} \frac{\dif l}{\dif t} x F' + \left[ \frac{1}{V^3}\frac{\dif }{\dif t} (V^2l) + 2\nu \frac{1}{lV} l^{-1} x^2 \right] F - W = 0
+\end{equation}
+要求： $\frac{1}{V} \frac{\dif l}{\dif t} = \alpha$
+\begin{equation}
+   \frac{1}{V^3} \frac{\dif }{\dif t}(V^2l) = \frac{1}{V} \frac{\dif l}{\dif t} + \frac{2l}{V^2} \frac{\dif V}{\dif t}, \quad \frac{\nu}{lV} = \alpha_3
+\end{equation}
+则
+\begin{equation}
+   \alpha_1 x F' + \left[ \alpha_1 + \alpha_2 + \alpha_3 x^2 \right] F - W = 0
+\end{equation}
+\begin{equation}
+   \frac{1}{V} \frac{\dif l}{\dif t} = \alpha_1 \implies 2 V \frac{\dif l}{\dif t} = 2V^2\alpha_1
+\end{equation}
+\begin{equation}
+   \frac{2l}{V^2} \frac{\dif V}{\dif t} = \alpha_2 \implies 2l \frac{\dif V}{\dif t} = V^2 \alpha_2
+\end{equation}
+\begin{equation}
+   2 \frac{\dif (lV)}{\dif t} = V^2(2\alpha_1+\alpha_2) \implies 2\alpha_1+\alpha_2 = 0
+\end{equation}
+\begin{equation}
+   \frac{1}{V} \frac{\dif }{\dif t} \left( \frac{\frac{\nu}{\alpha_3}}{V} \right)  = \alpha_1
+\end{equation}
+\begin{equation}
+   \frac{1}{V} \frac{\dif }{\dif t}\left( \frac{1}{V} \right) = \frac{\alpha_1 \alpha_3}{\nu}
+\end{equation}
+\begin{equation}
+   \frac{\dif }{\dif t} \left( \frac{1}{V} \right) ^2 = \frac{2 \alpha_1 \alpha_3}{\nu}
+\end{equation}
+\begin{equation}
+   \left( \frac{1}{V} \right) ^2 = \frac{2\alpha_1\alpha_3}{\nu}t + C
+\end{equation}
+\begin{equation}
+   l^2 = \left( \frac{\nu}{\alpha_3 V} \right) ^2 = \frac{\nu^2}{\alpha_3^2} \left[ \frac{2\alpha_1\alpha_3}{\nu}t + C \right]  = \frac{2\nu \alpha_1}{\alpha_3}t + C'
+\end{equation}
+\begin{equation}
+   \frac{3}{2} \left< u^2 \right> = \int_{0}^{\infty} E \dif k = V^2 \int_{0}^{\infty} F(x) \dif x \sim V^2  \sim (t+C)^{-1}
+\end{equation}
+\begin{equation}
+   \frac{3}{2} \frac{\dif }{\dif t} \left< u^2 \right> = - \varepsilon \sim \left( t + C \right) ^{-2}
+\end{equation}
+\begin{equation}
+   \frac{\dif \frac{3}{2} \left< u^2 \right> }{\dif t} \frac{1}{\frac{3}{2}\left< u^2 \right> } = -(t+C)^{-1} = \frac{-15\nu \frac{\left< u^2 \right> }{\lambda^2}}{\frac{3}{2}\left< u^2 \right> } = -10 \frac{\nu}{\lambda^2}
+\end{equation}
+\begin{equation}
+   R_0 \equiv \frac{\sqrt{\left< u^2 \right> \mid_{t=0}} \lambda_0}{\nu}
+\end{equation}
+\begin{equation}
+   \int_{0}^{\infty} 2 x^2 F(x) \dif x = \frac{\varepsilon t^2}{\nu} = \frac{3}{20} R_0^2 \equiv R 
+\end{equation}
+
+Landau 质疑(1944)
+
+\begin{equation}
+   S_2 (r) = C_2 \varepsilon^{\frac{2}{3}} r^{\frac{2}{3}}, \quad \eta \ll r \le  L
+\end{equation}
+$C_2$ 不唯一.
+
+K62理论
+
+$v \sim \varepsilon r \implies S_2(r) \propto (\varepsilon_r r)^{\frac{2}{3}}$ 粗粒化的耗散率 $\varepsilon_r \equiv \frac{1}{V} \int_{B(r)}^{} \varepsilon \dif V $
+
+设$\ln \varepsilon_r$ 为正态分布
+\begin{equation}
+   \left< \ln \varepsilon \right>  = a(r) = c \ln \frac{r_0}{r} + a_0
+\end{equation}
+\begin{equation}
+   \left< \left( \ln \varepsilon_r - a \right) ^2 \right> = \sigma(r) = \mu \ln \frac{r_0}{r} + A
+\end{equation}
+\begin{equation}
+   p(\varepsilon_r) = \frac{1}{\sqrt{2\pi} \sigma} \frac{1}{\varepsilon_r} \me^{-\frac{\left( \ln \varepsilon_r - a \right) ^2}{2\sigma^2}}
+\end{equation}
+\begin{equation}
+   \int_{0}^{\infty} x^{n} p(x) \dif x = \int_{0}^{\infty} x^n \frac{1}{\sqrt{2\pi} \sigma} \frac{1}{x} \me^{-\frac{\left( \ln x - a \right) ^2}{2\sigma^2}} \dif x = \me^{na + \frac{\sigma^2n^2}{2}}
+\end{equation}
+\begin{equation}
+   \left< \varepsilon_r^{p} \right> = \left( \me^{a} \right) ^{n} \left( \me^{\frac{\sigma^2}{2}} \right) ^{n^2} \propto \left( \frac{r_0}{r} \right)^{cn} \left( \frac{r_0}{r} \right)^{\frac{\mu}{2}n^2} = \left( \frac{r}{r_0} \right) ^{-cn - \frac{\mu}{2}n^2}
+\end{equation}
+\begin{equation}
+   \xi_p = \frac{p}{3} + \frac{\mu}{2} \left( \frac{p}{3} - \frac{p^2}{9} \right) 
+\end{equation}
+
+\begin{equation}
+   \left< \varepsilon_{l}^{p} \right> \sim l^{\tau (p)}
+\end{equation}
+\begin{equation}
+   \delta u_{l} \sim \left( \varepsilon_l l \right) ^{\frac{1}{3}}
+\end{equation}
+\begin{equation}
+   \xi(p) = \frac{p}{3} + \tau\left(\frac{p}{3}\right)
+\end{equation}
+$P(\delta u_l)$ 与$P(\varepsilon_l)$ 有简单的关系
+\begin{equation}
+   \tau \left( \frac{p}{3} \right) = \frac{\mu}{18} p (3-p)
+\end{equation}
+\begin{equation}
+   \tau \left( p \right) = \frac{\mu}{2} p (1-p)
+\end{equation}
+$\xi(p)<0$?
+\begin{equation}
+   S_p (l) = \left( \frac{l}{l_0} \right) ^{\xi(p)} S_p (l_0), \quad \frac{l}{l_0} \le 1
+\end{equation}
+若$\delta u_l$ 有最大值$U_{\max}$,若某个$\xi_p < 0, l \to 0, S_p + \left< |\delta u_l |^p \right> \le  (2U_{\max})^p$
+
+$\xi_p$ 是凸的 $\xi''_p < 0$ 
+\begin{equation}
+   \ln S_p (l) = \xi(p) \ln \left( \frac{l}{l_0} \right) + \ln S_p(l_0)
+\end{equation}
+对$p$ 求导
+\begin{equation}
+   \frac{S_p'}{S_p} = \xi'_p \ln \left( \frac{l}{l_0} \right) + \frac{S_p'(l_0)}{S_p(l_0)}
+\end{equation}
+再求导
+\begin{equation}
+   \frac{S_p'' S_p - (S_p')^2}{S_p^2} = \xi''_p \ln \left( \frac{l}{l_0} \right) + \frac{S_p''(l_0) S_p(l_0) - [S_p'(l_0)]^2}{S_p(l_0)^2}
+\end{equation}
+由施瓦尔兹不等式得结论，最左边小于0，最右边大于0
+\begin{equation}
+   S_p = \int_{0}^{\infty} x^{p} P_l (x) \dif x 
+\end{equation}
+\begin{equation}
+   S_p' = \int_{0}^{\infty} x^{p} \ln x P_l (x) \dif x 
+\end{equation}
+\begin{equation}
+   S_p'' = \int_{0}^{\infty} x^{p} \ln^2 x P_l (x) \dif x 
+\end{equation}
+分布意义下
+\begin{equation}
+   \delta u_l \equiv W_{ll_0} \delta u_{l_0},\quad l\le l_0,
+\end{equation}
+其中$W_{ll_0}$ 是随机乘子
+\begin{equation}
+   \begin{aligned}
+	  \varepsilon_l & \equiv W_{ll_1}\varepsilon_{l_1}\\
+					&= W_{ll_1} W_{l_1l_2}\varepsilon_{l_2} \\
+					&= W_{ll_1} W_{l_1 l_2}W_{l_1 l_2}\varepsilon_{l_2} \\
+   \end{aligned}
+\end{equation}
+\begin{equation}
+   \ln W_{ll_1} = \sum_{i=1}^{n} \ln W_{l_i l_{i+1}}
+\end{equation}
+$W_{ll_1}$ 的分布只与$\frac{l}{l_1}$ 有关。
+\begin{equation}
+   \begin{aligned}
+	  \left< \varepsilon_l^p \right> & = \left< W_{ll_1}^{p} \varepsilon_{l_1}^{p} \right> \\
+									 &= \left< W_{ll_1^{p}} \right> \left< \varepsilon_{l_1}^{p} \right>  \\
+   \end{aligned}
+\end{equation}
+\begin{equation}
+   \left< W_{ll_1}^{p} \right> = \left( \frac{l}{l_1} \right) ^{\tau(p)}
+\end{equation}
+\begin{equation}
+   \frac{l}{l_1} = \frac{l}{l_2} \frac{l_2}{l_3} \cdots \frac{l_{n_1}}{l_1} = \left( \frac{l}{l_2} \right) ^{n-1}
+\end{equation}
+
+分形几何方法，$\beta$-模型，大涡$l_0$小涡$\lambda l_0,\lambda<1$体积$\beta l_0^3 \neq l^3$ $n$次 $l = \lambda^{n}l_0$, $V = \beta^{n} l_0^{3}$ 小涡占有体积比率
+
+个数 $N = \frac{\beta^{n}l_0^{3}}{l^{3}} = \lambda^{n \frac{\ln \beta}{\ln \lambda}}$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

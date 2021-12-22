@@ -1,0 +1,107 @@
+%! TEX root = /Users/circle/Documents/博二上/湍流/Turbulence/HW4/homework/homework.tex
+\documentclass[12pt,a4]{ctexart}
+\input{/Users/circle/Documents/博二上/homework/setting.tex}
+\setcounter{secnumdepth}{2}
+\usepackage{bm}
+\usepackage{autobreak}
+\usepackage{amsmath}
+\setlength{\parindent}{2em}
+\graphicspath{{fig/}}
+
+
+%pdf 文件设置
+\hypersetup{
+   pdfauthor={袁磊祺},
+   pdftitle={湍流4}
+}
+
+\title{
+   \vspace{-1in}
+   \usefont{OT1}{bch}{b}{n}
+   \normalfont \normalsize \textsc{\LARGE Peking University}\\[1cm] % Name of your university/college \\ [25pt]
+   \horrule{0.5pt} \\[0.5cm]
+   \huge \bfseries{湍流4} \\
+   \horrule{2pt} \\[0.5cm]
+}
+\author{
+   \normalfont									\normalsize
+   College of Engineering \quad 2001111690  \quad 袁磊祺\\	\normalsize
+   \today
+}
+\date{}
+
+\begin{document}
+
+\input{setc.tex}
+
+\maketitle
+
+2021 年 1 月 3 日前交电子版.
+
+代码等作业内容可在 \texttt{\href{https://github.com/circlelq/Turbulence}{https://github.com/circlelq/Turbulence}} 查看。
+
+
+\section{1}
+
+自己构造一个在适当的小尺度范围满足 “ $2 / 3$ ” 定律的二阶纵向速度结构函数, 画出结构函数和一维能谱, 考察能谱函数是否满足 “ $5 / 3$ ” 定律。
+
+
+\section{2}
+
+考虑均匀各向同性湍流早期的衰减过程, 用 Pao (鲍亦和) 的能量传递模型和 相似性解数值求解无量纲的三维能谱函数, 并在一张图上画出若干初始雷诺数 下的无量纲能谱函数曲线。
+
+
+\section{3}
+
+阅读 Kolmogorov 1941 年的三篇湍流经典论文（见分享的书 Turbulence： Classical papers on statistical theory) 。 对较少关注的第二篇论文, 在你阅读后用 最简洁的论证给出 “$-10/7$” 衰减规律。并问用类似的方法, 通过适当修改假设, 可否推出湍流动能的指数规律衰减规律 (有人在一定形状的分形格栅尾流中测 量到此规律）?
+
+
+\section{4}
+
+证明 She--Leveque 层次相似律 (Hierarchical Self--Similarity, HSS）是广义扩展自 相似律 (Generalized Extended Self--Similarity, GESS）的一个特殊情形。
+
+
+\section{5}
+
+K62 模型中假设湍流在尺度 $\ell$ 上的粗粒化耗散率 $\varepsilon_{\ell}$ 满足对数正态分布, 并且均
+值和方差也满足随尺度变化的一定的对数规律, 由此推出 $p$ 阶速度结构函数的
+标度指数规律为 $\zeta(p)=\frac{p}{3}+\frac{\mu p}{18}(3-p)$ 。证明: 尺度 $\ell$ 上速度增量的绝对值 $U$ 作为
+随机变量, 其概率密度 $P(\ell, U)$ 也符合对数正态分布, 且满足如下方程:
+\begin{equation}
+   \ell \frac{\partial P}{\partial \ell}+(\gamma+4 b) U \frac{\partial P}{\partial U}+b U^{2} \frac{\partial^{2} P}{\partial U^{2}}+(\gamma+2 b) P=0
+\end{equation}
+其中 $\gamma=(3+\mu) / 9, b=\mu / 18$ 。
+
+
+\section{6}
+
+试估计用大涡模拟方法计算高雷诺数边界层湍流时的网格规模。参考 Pope 书
+习题 13.29 (A) 推出 (13.173) 式。
+
+
+\section{7}
+
+Prandtl 混合长模型是应用最多的一个湍流模型。但教科书中通常都是针对平
+均流动为二维单向的剪切湍流给出给模型。试给出混合长模型的一个三维各向
+异性推广。注意: 模型应符合坐标不变的张量性质。
+
+
+\section{8}
+
+推导周期边界条件下 Navier--Stokes 方程在傅立叶谱空间中的形式。从数学形 式上看, 二维和三维情况下最后有区别吗? 用周期边界条件模拟高雷诺数均匀 各向同性湍流, 在模拟时计算参数的选取应注意什么问题?
+
+
+
+
+
+
+
+
+
+
+
+% \nocite{*}
+
+\input{bib.tex}
+
+\end{document}

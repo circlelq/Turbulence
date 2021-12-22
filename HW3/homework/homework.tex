@@ -53,16 +53,16 @@
 
 写出$X_1(-\tau),X_2(0),X_3(\tau)$ 三个随机变量的概率函数有
 \begin{equation}
-   f(X_1,-\tau;X_2,0;X_3,\tau) = \frac{(2\pi)^{-\frac{3}{2}}}{\sigma^3\sqrt{D}}\exp \left[ - \frac{1}{2D\sigma^2} \sum_{i,k}^3 D_{ik} x_i x_k \right] 
+   f(X_1,-\tau;X_2,0;X_3,\tau) = \frac{(2\pi)^{-\frac{3}{2}}}{\sigma^3\sqrt{D}}\exp \left[ - \frac{1}{2D\sigma^2} \sum_{i,k}^3 D_{ik} x_i x_k \right]
 \end{equation}
 其中$D$是矩阵
 \begin{equation}
-   R_{ik} = 
-   \begin{pmatrix} 
-	  1 & R(\tau) & R(2\tau) \\
-	  R(\tau) & 1 & R(\tau) \\
-	  R(2\tau) & R(\tau) & 1
-   \end{pmatrix} 
+   R_{ik} =
+   \begin{pmatrix}
+      1        & R(\tau) & R(2\tau) \\
+      R(\tau)  & 1       & R(\tau)  \\
+      R(2\tau) & R(\tau) & 1
+   \end{pmatrix}
 \end{equation}
 矩阵的行列式，$D_{ik}$是元素$R_{ik}$ 的余子式。在假设$R'(0) = 0$ 的情况下，根据
 \begin{equation}
@@ -71,9 +71,9 @@
 可计算得
 \begin{equation}
    \begin{aligned}
-	  \langle\ddot{X} \mid X=x\rangle & = \lim_{\tau\to 0} \left<  \frac{X_{1}(t+\tau) - 2X_2(t) + X_3(t-\tau)}{\tau^2}	\right> \\
-									  &= \lim_{\tau\to 0} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty}  \frac{X_{1}(t+\tau) - 2X_2(t) + X_3(t-\tau)}{\tau^2} f(X_1,-\tau;X_2,0;X_3,\tau) \dif X_1 \dif X_3 \\
-									  &= - \left< \dot{X}^2 \right> x \\
+      \langle\ddot{X} \mid X=x\rangle & = \lim_{\tau\to 0} \left<  \frac{X_{1}(t+\tau) - 2X_2(t) + X_3(t-\tau)}{\tau^2}	\right>                                                                                 \\
+                                      & = \lim_{\tau\to 0} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty}  \frac{X_{1}(t+\tau) - 2X_2(t) + X_3(t-\tau)}{\tau^2} f(X_1,-\tau;X_2,0;X_3,\tau) \dif X_1 \dif X_3 \\
+                                      & = - \left< \dot{X}^2 \right> x                                                                                                                                         \\
    \end{aligned}
 \end{equation} \qed
 
@@ -139,8 +139,8 @@
 两边平方得
 \begin{equation}
    \begin{aligned}
-	  \left( \frac{\partial u}{\partial x} \right)^2 & =  \left( \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z} \right)^2                                                                                   \\
-													 & = \left( \frac{\partial v}{\partial y}  \right)^2 + \left( \frac{\partial w}{\partial z}  \right)^2 + 2\frac{\partial v}{\partial y} \frac{\partial w}{\partial z}.
+      \left( \frac{\partial u}{\partial x} \right)^2 & =  \left( \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z} \right)^2                                                                                   \\
+                                                     & = \left( \frac{\partial v}{\partial y}  \right)^2 + \left( \frac{\partial w}{\partial z}  \right)^2 + 2\frac{\partial v}{\partial y} \frac{\partial w}{\partial z}.
    \end{aligned}
 \end{equation}
 取系综平均可得
@@ -161,39 +161,39 @@
 对坐标进行$45^{\circ}$可得
 \begin{equation}
    \begin{cases}
-	  \sqrt{2} x' & = x + y  \\
-	  \sqrt{2} y' & = -x + y \\
-	  z' & = z
+      \sqrt{2} x' & = x + y  \\
+      \sqrt{2} y' & = -x + y \\
+      z'          & = z
    \end{cases}
    \label{eq:32}
 \end{equation}
 \begin{equation}
    \begin{cases}
-	  \sqrt{2} u' & = u + v  \\
-	  \sqrt{2} v' & = -u + v \\
-	  v' & = v
+      \sqrt{2} u' & = u + v  \\
+      \sqrt{2} v' & = -u + v \\
+      v'          & = v
    \end{cases}
 \end{equation}
 Hence
 \begin{equation}
    \begin{cases}
-	  \frac{\partial u}{\partial x} & =\frac{1}{2}\left(\frac{\partial u^{\prime}}{\partial x^{\prime}}-\frac{\partial v^{\prime}}{\partial x^{\prime}}-\frac{\partial u^{\prime}}{\partial y^{\prime}}+\frac{\partial v^{\prime}}{\partial y^{\prime}}\right) \\
-	  \frac{\partial v}{\partial x} & =\frac{1}{2}\left(\frac{\partial u^{\prime}}{\partial x^{\prime}}+\frac{\partial v^{\prime}}{\partial x^{\prime}}-\frac{\partial u^{\prime}}{\partial y^{\prime}}-\frac{\partial u^{\prime}}{\partial y^{\prime}}\right) \\
-	  \frac{\partial w}{\partial x} & =\frac{1}{\sqrt{2}}\left(\frac{\partial w^{\prime}}{\partial x^{\prime}}-\frac{\partial w^{\prime}}{\partial y^{\prime}}\right)                                                                                          \\
+      \frac{\partial u}{\partial x} & =\frac{1}{2}\left(\frac{\partial u^{\prime}}{\partial x^{\prime}}-\frac{\partial v^{\prime}}{\partial x^{\prime}}-\frac{\partial u^{\prime}}{\partial y^{\prime}}+\frac{\partial v^{\prime}}{\partial y^{\prime}}\right) \\
+      \frac{\partial v}{\partial x} & =\frac{1}{2}\left(\frac{\partial u^{\prime}}{\partial x^{\prime}}+\frac{\partial v^{\prime}}{\partial x^{\prime}}-\frac{\partial u^{\prime}}{\partial y^{\prime}}-\frac{\partial u^{\prime}}{\partial y^{\prime}}\right) \\
+      \frac{\partial w}{\partial x} & =\frac{1}{\sqrt{2}}\left(\frac{\partial w^{\prime}}{\partial x^{\prime}}-\frac{\partial w^{\prime}}{\partial y^{\prime}}\right)                                                                                          \\
    \end{cases}
 \end{equation}
 \begin{equation}
    \begin{cases}
-	  \frac{\partial u}{\partial y} & =\frac{1}{2}\left(\frac{\partial u^{\prime}}{\partial x^{\prime}}-\frac{\partial v^{\prime}}{\partial x^{\prime}}+\frac{\partial u^{\prime}}{\partial y^{\prime}}-\frac{\partial v^{\prime}}{\partial y^{\prime}}\right) \\
-	  \frac{\partial v}{\partial y} & =\frac{1}{2}\left(\frac{\partial u^{\prime}}{\partial x^{\prime}}+\frac{\partial v^{\prime}}{\partial x^{\prime}}+\frac{\partial u^{\prime}}{\partial y^{\prime}}+\frac{\partial v^{\prime}}{\partial y^{\prime}}\right) \\
-	  \frac{\partial w}{\partial y} & =\frac{1}{\sqrt{2}}\left(\frac{\partial w^{\prime}}{\partial x^{\prime}}+\frac{\partial w^{\prime}}{\partial y^{\prime}}\right)                                                                                          \\
+      \frac{\partial u}{\partial y} & =\frac{1}{2}\left(\frac{\partial u^{\prime}}{\partial x^{\prime}}-\frac{\partial v^{\prime}}{\partial x^{\prime}}+\frac{\partial u^{\prime}}{\partial y^{\prime}}-\frac{\partial v^{\prime}}{\partial y^{\prime}}\right) \\
+      \frac{\partial v}{\partial y} & =\frac{1}{2}\left(\frac{\partial u^{\prime}}{\partial x^{\prime}}+\frac{\partial v^{\prime}}{\partial x^{\prime}}+\frac{\partial u^{\prime}}{\partial y^{\prime}}+\frac{\partial v^{\prime}}{\partial y^{\prime}}\right) \\
+      \frac{\partial w}{\partial y} & =\frac{1}{\sqrt{2}}\left(\frac{\partial w^{\prime}}{\partial x^{\prime}}+\frac{\partial w^{\prime}}{\partial y^{\prime}}\right)                                                                                          \\
    \end{cases}
 \end{equation}
 \begin{equation}
    \begin{cases}
-	  \frac{\partial u}{\partial z} & =\frac{1}{\sqrt{2}}\left(\frac{\partial u^{\prime}}{\partial z^{\prime}}-\frac{\partial v^{\prime}}{\partial z^{\prime}}\right) \\
-	  \frac{\partial v}{\partial z} & =\frac{1}{\sqrt{2}}\left(\frac{\partial u^{\prime}}{\partial z^{\prime}}+\frac{\partial v^{\prime}}{\partial z^{\prime}}\right) \\
-	  \frac{\partial w}{\partial z} & =\frac{\partial w^{\prime}}{\partial z^{\prime}}
+      \frac{\partial u}{\partial z} & =\frac{1}{\sqrt{2}}\left(\frac{\partial u^{\prime}}{\partial z^{\prime}}-\frac{\partial v^{\prime}}{\partial z^{\prime}}\right) \\
+      \frac{\partial v}{\partial z} & =\frac{1}{\sqrt{2}}\left(\frac{\partial u^{\prime}}{\partial z^{\prime}}+\frac{\partial v^{\prime}}{\partial z^{\prime}}\right) \\
+      \frac{\partial w}{\partial z} & =\frac{\partial w^{\prime}}{\partial z^{\prime}}
    \end{cases}
 \end{equation}
 
@@ -202,29 +202,29 @@ Hence
    \caption{记号说明。}
    \label{tab:31}
    \begin{tabular}{ccccccccccc}
-	  \toprule
-	  $\overline{\left(\frac{\partial u}{\partial x}\right)^{2}}$
-	   & $\overline{ \frac{\partial u}{\partial x} \frac{\partial u}{\partial y} }$
-	   & $\overline{{\left(\frac{\partial u}{\partial y}\right)}^{2} }$
-	   & $\overline{  \frac{\partial u}{\partial y} \frac{\partial u}{\partial z} }$
-	   & $\overline{ \frac{\partial u}{\partial x} \frac{\partial v}{\partial x} }$
-	   & $ \overline{\frac{\partial u}{\partial x} \frac{\partial v}{\partial y}} $
-	   & $ \overline{\frac{\partial u}{\partial x} \frac{\partial v}{\partial z}}$
-	   & $\overline{ \frac{\partial u}{\partial y} \frac{\partial v}{\partial x} }$
-	   & $\overline{ \frac{\partial u}{\partial y} \frac{\partial v}{\partial z} }$
-	   & $\overline{ \frac{\partial u}{\partial z} \frac{\partial v}{\partial z}}$   \\
-	   \midrule
-	   $a_{1} $
-	   & $ a_{2} $
-	   & $ a_{3} $
-	   & $ a_{4} $
-	   & $ a_{5} $
-	   & $ a_{6} $
-	   & $ a_{7} $
-	   & $ a_{8} $
-	   & $ a_{9} $
-	   & $ a_{10}$\\
-	   \bottomrule
+      \toprule
+      $\overline{\left(\frac{\partial u}{\partial x}\right)^{2}}$
+       & $\overline{ \frac{\partial u}{\partial x} \frac{\partial u}{\partial y} }$
+       & $\overline{{\left(\frac{\partial u}{\partial y}\right)}^{2} }$
+       & $\overline{  \frac{\partial u}{\partial y} \frac{\partial u}{\partial z} }$
+       & $\overline{ \frac{\partial u}{\partial x} \frac{\partial v}{\partial x} }$
+       & $ \overline{\frac{\partial u}{\partial x} \frac{\partial v}{\partial y}} $
+       & $ \overline{\frac{\partial u}{\partial x} \frac{\partial v}{\partial z}}$
+       & $\overline{ \frac{\partial u}{\partial y} \frac{\partial v}{\partial x} }$
+       & $\overline{ \frac{\partial u}{\partial y} \frac{\partial v}{\partial z} }$
+       & $\overline{ \frac{\partial u}{\partial z} \frac{\partial v}{\partial z}}$   \\
+      \midrule
+      $a_{1} $
+       & $ a_{2} $
+       & $ a_{3} $
+       & $ a_{4} $
+       & $ a_{5} $
+       & $ a_{6} $
+       & $ a_{7} $
+       & $ a_{8} $
+       & $ a_{9} $
+       & $ a_{10}$                                                                   \\
+      \bottomrule
    \end{tabular}
 \end{table}
 对\cref{eq:32}求平方，并利用各向同性可得以下等式
@@ -290,18 +290,18 @@ Hence
 将\cref{eq:41}带入\cref{eq:42}可得
 \begin{equation}
    \begin{aligned}
-	  \phi_{1}(k) & = \frac{1}{2 \pi} \int_{-\infty}^{\infty}\left\langle u^{2}\right\rangle f(r) \me^{-\mi k r} \dif r \\ 
-				  & = \frac{1}{2 \pi} \int_{-\infty}^{\infty}2 \int_{-\infty}^{\infty} E(\lambda)(\lambda r)^{-2}\left(\frac{\sin \lambda r}{\lambda r}-\cos \lambda r\right)\dif \lambda \, \me^{-\mi k r} \dif r \\
-				  & = \frac{1}{ \pi} \int_{-\infty}^{\infty}E(\lambda) \lambda^{-2} \int_{-\infty}^{\infty}  r^{-2}\left(\frac{\sin \lambda r}{\lambda r}-\cos \lambda r\right) \me^{-\mi k r} \dif r \dif \lambda \\
-				  & = \frac{1}{ \pi} \int_{-\infty}^{\infty}E(\lambda) \lambda^{-2} \int_{-\infty}^{\infty}  r^{-2}\left(\frac{\sin \lambda r}{\lambda r}-\cos \lambda r\right) \cos(kr) \dif r \dif \lambda \\
+      \phi_{1}(k) & = \frac{1}{2 \pi} \int_{-\infty}^{\infty}\left\langle u^{2}\right\rangle f(r) \me^{-\mi k r} \dif r                                                                                            \\
+                  & = \frac{1}{2 \pi} \int_{-\infty}^{\infty}2 \int_{-\infty}^{\infty} E(\lambda)(\lambda r)^{-2}\left(\frac{\sin \lambda r}{\lambda r}-\cos \lambda r\right)\dif \lambda \, \me^{-\mi k r} \dif r \\
+                  & = \frac{1}{ \pi} \int_{-\infty}^{\infty}E(\lambda) \lambda^{-2} \int_{-\infty}^{\infty}  r^{-2}\left(\frac{\sin \lambda r}{\lambda r}-\cos \lambda r\right) \me^{-\mi k r} \dif r \dif \lambda \\
+                  & = \frac{1}{ \pi} \int_{-\infty}^{\infty}E(\lambda) \lambda^{-2} \int_{-\infty}^{\infty}  r^{-2}\left(\frac{\sin \lambda r}{\lambda r}-\cos \lambda r\right) \cos(kr) \dif r \dif \lambda       \\
    \end{aligned}
 \end{equation}
 其中
 \begin{equation}
    \begin{aligned}
-	 & 4\lambda\int_{-\infty}^{\infty}  r^{-2}\left(\frac{\sin \lambda r}{\lambda r}-\cos \lambda r\right) \cos(kr) \dif r \\ 
-	  = & \left(\lambda-k\right)\left(\lambda+k\right)\operatorname{Si}\left(\left(\lambda+k\right)r\right)+\left(\lambda-k\right)\left(\lambda+k\right)\operatorname{Si}\left(\left(\lambda-k\right)r\right)\\
-		& +\frac{2k\sin\left(kr\right)\sin\left(\lambda r\right)+2\lambda \cos\left(kr\right)\cos\left(\lambda r\right)}{r}-\frac{2\cos\left(kr\right)\sin\left(\lambda r\right)}{r^2}
+        & 4\lambda\int_{-\infty}^{\infty}  r^{-2}\left(\frac{\sin \lambda r}{\lambda r}-\cos \lambda r\right) \cos(kr) \dif r                                                                                 \\
+      = & \left(\lambda-k\right)\left(\lambda+k\right)\operatorname{Si}\left(\left(\lambda+k\right)r\right)+\left(\lambda-k\right)\left(\lambda+k\right)\operatorname{Si}\left(\left(\lambda-k\right)r\right) \\
+        & +\frac{2k\sin\left(kr\right)\sin\left(\lambda r\right)+2\lambda \cos\left(kr\right)\cos\left(\lambda r\right)}{r}-\frac{2\cos\left(kr\right)\sin\left(\lambda r\right)}{r^2}
    \end{aligned}
 \end{equation}
 其中
@@ -328,13 +328,13 @@ Hence
 把$r^2$ 乘过去再积分得
 \begin{equation}
    \begin{aligned}
-	  r^3 K(r) & =  8 \pi \int_{0}^{+\infty} \int_{0}^r x^2 k^6 \Gamma(k) \frac{\sin kx}{kx} \dif x \dif k\\
-			   &= 8 \pi \int_{0}^{+\infty} k^3 \Gamma(k) \left( \sin(kr) - k r \cos(kr) \right) \dif k \\
+      r^3 K(r) & =  8 \pi \int_{0}^{+\infty} \int_{0}^r x^2 k^6 \Gamma(k) \frac{\sin kx}{kx} \dif x \dif k \\
+               & = 8 \pi \int_{0}^{+\infty} k^3 \Gamma(k) \left( \sin(kr) - k r \cos(kr) \right) \dif k    \\
    \end{aligned}
 \end{equation}
 带入
 \begin{equation}
-   K(r) = \left\langle u^{2}\right\rangle^{\frac{3}{2}} \frac{1}{r^4} \frac{\partial }{\partial r} (r^4k) 
+   K(r) = \left\langle u^{2}\right\rangle^{\frac{3}{2}} \frac{1}{r^4} \frac{\partial }{\partial r} (r^4k)
 \end{equation}
 得
 \begin{equation}
@@ -343,8 +343,8 @@ Hence
 再次积分可得
 \begin{equation}
    \begin{aligned}
-	  \left\langle u^{2}\right\rangle^{\frac{3}{2}} r^4k & = 8 \pi \int_{0}^{+\infty} \int_{0}^r x k^3 \Gamma(k) \left( \sin(kx) - k x \cos(kx) \right) \dif x \dif k\\
-														 &= 8 \pi \int_{0}^{+\infty}   k \Gamma(k) ( 3 \sin(kr) - 3 k r \cos(k r) - k^2 r^2 \sin(kr) )  \dif k.\\
+      \left\langle u^{2}\right\rangle^{\frac{3}{2}} r^4k & = 8 \pi \int_{0}^{+\infty} \int_{0}^r x k^3 \Gamma(k) \left( \sin(kx) - k x \cos(kx) \right) \dif x \dif k \\
+                                                         & = 8 \pi \int_{0}^{+\infty}   k \Gamma(k) ( 3 \sin(kr) - 3 k r \cos(k r) - k^2 r^2 \sin(kr) )  \dif k.      \\
    \end{aligned}
 \end{equation}
 \qed
@@ -376,7 +376,7 @@ Hence
 \end{equation}
 一维能谱$\varphi(k)$ 和$E(k)$ 的关系是
 \begin{equation}
-   \varphi_1(k_1) = \frac{1}{2} \int_{k_1}^{+\infty} \left( 1 - \frac{k_1^2}{k^2} \frac{E(k)}{k}\right) \dif k. 
+   \varphi_1(k_1) = \frac{1}{2} \int_{k_1}^{+\infty} \left( 1 - \frac{k_1^2}{k^2} \frac{E(k)}{k}\right) \dif k.
 \end{equation}
 画图可得\cref{fig:E-k,fig:phi-k}.
 \begin{figure}
