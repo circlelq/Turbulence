@@ -6,7 +6,7 @@
 \usepackage{autobreak}
 \usepackage{amsmath}
 \setlength{\parindent}{2em}
-\graphicspath{{fig/}}
+\graphicspath{{../code/}}
 
 
 %pdf 文件设置
@@ -45,6 +45,8 @@
 
 自己构造一个在适当的小尺度范围满足 “ $2 / 3$ ” 定律的二阶纵向速度结构函数, 画出结构函数和一维能谱, 考察能谱函数是否满足 “ $5 / 3$ ” 定律。
 
+\textsf{\hspace{-2em}\sf  \textbf{解:}}
+
 
 \section{2}
 
@@ -55,20 +57,15 @@
 
 阅读 Kolmogorov 1941 年的三篇湍流经典论文（见分享的书 Turbulence： Classical papers on statistical theory) 。 对较少关注的第二篇论文, 在你阅读后用 最简洁的论证给出 “$-10/7$” 衰减规律。并问用类似的方法, 通过适当修改假设, 可否推出湍流动能的指数规律衰减规律 (有人在一定形状的分形格栅尾流中测 量到此规律）?
 
-
-\section{4}
-
-证明 She--Leveque 层次相似律 (Hierarchical Self--Similarity, HSS）是广义扩展自 相似律 (Generalized Extended Self--Similarity, GESS）的一个特殊情形。
-
-
 \section{5}
 
 K62 模型中假设湍流在尺度 $\ell$ 上的粗粒化耗散率 $\varepsilon_{\ell}$ 满足对数正态分布, 并且均
 值和方差也满足随尺度变化的一定的对数规律, 由此推出 $p$ 阶速度结构函数的
-标度指数规律为 $\zeta(p)=\frac{p}{3}+\frac{\mu p}{18}(3-p)$ 。证明: 尺度 $\ell$ 上速度增量的绝对值 $U$ 作为
-随机变量, 其概率密度 $P(\ell, U)$ 也符合对数正态分布, 且满足如下方程:
+标度指数规律为 $\zeta(p)=\frac{p}{3}+\frac{\mu p}{18}(3-p)$ 。
+
+证明: 尺度 $\ell$ 上速度增量的绝对值 $U$ 作为随机变量, 其概率密度 $P(\ell, U)$ 也符合对数正态分布, 且满足如下方程:
 \begin{equation}
-   \ell \frac{\partial P}{\partial \ell}+(\gamma+4 b) U \frac{\partial P}{\partial U}+b U^{2} \frac{\partial^{2} P}{\partial U^{2}}+(\gamma+2 b) P=0
+   \ell \frac{\partial P}{\partial \ell}+(\gamma+4 b) U \frac{\partial P}{\partial U}+b U^{2} \frac{\partial^{2} P}{\partial U^{2}}+(\gamma+2 b) P=0,
 \end{equation}
 其中 $\gamma=(3+\mu) / 9, b=\mu / 18$ 。
 
@@ -77,6 +74,16 @@ K62 模型中假设湍流在尺度 $\ell$ 上的粗粒化耗散率 $\varepsilon_
 
 试估计用大涡模拟方法计算高雷诺数边界层湍流时的网格规模。参考 Pope 书
 习题 13.29 (A) 推出 (13.173) 式。
+
+
+\textsf{\hspace{-2em}\sf  \textbf{解:}}
+
+In LES-NWR, in order to resolve the near-wall motions, the filter width and grid spacing in the viscous near-wall region must be on the order of $\delta_{\nu}$.\cite{pop} So 
+\begin{equation}
+   \Delta x=a_{x} \delta_{v}, \quad \Delta z=a_{z} \delta_{v}.
+\end{equation}
+where $a_x$ and $a_z$ are positive constants.\qed
+
 
 
 \section{7}

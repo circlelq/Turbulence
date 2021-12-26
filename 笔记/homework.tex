@@ -186,24 +186,24 @@ $T$ 忽略
 \end{equation}
 设$E = V^2 l F(kl)$ 用 Loistansky 不变量可得$ E_0(k) = ck^4$
 
-Kolmogorov 1941 理论
+\subsection{Kolmogorov 1941 理论}
 
 \begin{enumerate}
    \item 展示湍流（一般湍流）在Re极大时，在局部为均匀各向同性（远离边界，奇点），在增量意义下。$n$ 点联合p.d.f（增量）只依赖于$n$ 点构型形状、大小与位置、时刻及方位无关。由此引入结构函数的概念。
    \item 在Re极大时，小尺度范围为普适平衡。$ \frac{\partial }{\partial t} \left<\cdot \right> \approx 0$,统计特性$\left<\cdot \right>$ 只依赖于$\left<\varepsilon\right>,\nu$
-   \item 在Re极大时，小尺度范围的低波数段，统计量只依赖于$\left<\epsilon \right>$ （第二相似性假设）
+   \item 在Re极大时，小尺度范围的低波数段，统计量只依赖于$\left<\varepsilon \right>$ （第二相似性假设）
 \end{enumerate}
 \begin{equation}
-   S_2(r) = B(\epsilon, \nu, r)
+   S_2(r) = B(\varepsilon, \nu, r)
 \end{equation}
 \begin{equation}
-   \eta \equiv \left( \frac{\nu^3}{\epsilon} \right) ^{\frac{1}{4}},\quad v \equiv (\epsilon \eta)^{\frac{1}{3}}
+   \eta \equiv \left( \frac{\nu^3}{\varepsilon} \right) ^{\frac{1}{4}},\quad v \equiv (\varepsilon \eta)^{\frac{1}{3}}
 \end{equation}
 \begin{equation}
    S_2(r) = v^2 F \left( \frac{r}{\eta} \right),\quad S_3(r) = v^3 G(\frac{r}{\eta}),\quad \frac{\eta v}{\nu} = 1
 \end{equation}
 \begin{equation}
-   S_2 = B(r,\epsilon),\quad v \sim (\epsilon r)^{\frac{1}{3}},\quad S_2 = C_2 (\epsilon r)^{\frac{2}{3}}
+   S_2 = B(r,\varepsilon),\quad v \sim (\varepsilon r)^{\frac{1}{3}},\quad S_2 = C_2 (\varepsilon r)^{\frac{2}{3}}
 \end{equation}
 
 衰变后期 $\lambda^2 = 4 \nu (t-t_0)$
@@ -217,7 +217,7 @@ Kolmogorov 1941 理论
    \end{aligned}
 \end{equation}
 \begin{equation}
-   f(r) = 1 - \frac{1}{2} \left( \frac{r}{\lambda} \right)^2 + o(\lambda^2)
+   f(r) = 1 - \frac{1}{2} \left( \frac{r}{\lambda} \right)^2 + o(r^2)
 \end{equation}
 
 \begin{enumerate}
@@ -617,12 +617,137 @@ $W_{ll_1}$ 的分布只与$\frac{l}{l_1}$ 有关。
 个数 $N = \frac{\beta^{n}l_0^{3}}{l^{3}} = \lambda^{n \frac{\ln \beta}{\ln \lambda}}$
 
 
+\section{数值模拟}
+
+三维 $\bm{u} (\bm{x} ,t)$ , 周期边界条件。
+
+\begin{equation}
+   \bm{u} (\bm{x} , t) = \sum_{\bm{k} }^{} \hat{\bm{u} } (\bm{k} ,t) \me^{\mi \bm{k} \cdot \bm{x} },
+\end{equation}
+\begin{equation}
+   \nabla \cdot \bm{u} = 0 \implies \sum_{k}^{} \mi \bm{k} \cdot \hat{\bm{u} } (\bm{k} ,t) \me^{\mi \bm{k} \cdot \bm{x} } = 0 \implies \bm{k} \cdot \hat{\bm{u} }(\bm{k} ,t)=0, 
+\end{equation}
+\begin{equation}
+   \frac{\partial \bm{u} }{\partial t}  + \nabla \cdot (\bm{u} \bm{u} ) = - \nabla \left( \frac{p}{\rho} \right) + \nu \nabla ^2 \bm{u} + \bm{f}.
+\end{equation}
+亥姆霍兹分解 $\bm{a} = \nabla \phi + \bm{a}_{\bot}$
+\begin{equation}
+   -k^2 \hat{\phi} = \mi \bm{k}  \cdot \hat{\bm{a} }(\bm{k} ),\quad \hat{\phi} = - \frac{\mi \bm{k} }{k^2} \cdot \hat{\bm{a} }(\bm{k} )
+\end{equation}
+\begin{equation}
+   \hat{\bm{a} }_{\bot} = \hat{\bm{a} } - \mi \bm{k} \hat{\phi} = \hat{\bm{a} } + \mi \bm{k} \frac{\mi \bm{k} }{k^2}\cdot \hat{\bm{a} } = \hat{\bm{a} } - \frac{\bm{k} \bm{k} }{k^2}\cdot \hat{\bm{a} } = \left( I - \frac{\bm{k} \bm{k} }{k^2} \right) \cdot \hat{\bm{a} } = P \cdot \hat{\bm{a} }
+\end{equation}
+其中
+\begin{equation}
+   P_{ij} = \delta_{ij} - \frac{k_i k_j}{k^2}
+\end{equation}
+ODE:
+\begin{equation}
+   \left( \frac{\dif }{\dif t} + \nu k^2 \right) \hat{u}_i (\bm{k} ,t) = - \mi k_m P_{ij} (\bm{k} ) \cdot \sum_{\bm{p} + \bm{q} = \bm{k} }^{} u_j (\bm{p} ,t) u_m(\bm{q} ,t) + \hat{f}(\bm{k} ,t)
+\end{equation}
+
+\begin{equation}
+   \sum_{k-\frac{1}{2}\le \abs{\bm{k} }\le k + \frac{1}{2}}^{} \left< \abs{ \hat{u}_i \hat{u}_i } \right> = E(k)
+\end{equation}
+Kolmogorov 尺度 $\frac{L}{N} \sim \eta$ 
+\begin{equation}
+   \eta \equiv \left( \frac{\nu^{3}}{\varepsilon} \right)^{\frac{1}{4}}
+\end{equation}
+
+螺旋波分解
+\begin{equation}
+   \left\{
+	  \begin{aligned}
+		 u & = \sin z \\
+		 v & = \cos z \\
+		 w & = 0.
+	  \end{aligned}
+   \right.
+\end{equation}
+\begin{equation}
+   \bm{\omega}  = \bm{u} 
+\end{equation}
+
+\begin{equation}
+   \left\{
+	  \begin{aligned}
+		 u & = -\sin z \\
+		 v & = \cos z \\
+		 w & = 0.
+	  \end{aligned}
+   \right.
+\end{equation}
+\begin{equation}
+   \bm{\omega}  = - \bm{u} 
+\end{equation}
 
 
+\begin{equation}
+   \left\{
+	  \begin{aligned}
+		 u & = \sin kz \\
+		 v & = \cos kz \\
+		 w & = 0.
+	  \end{aligned}
+   \right. \implies
+   \begin{aligned}
+	  \bm{V}_1^{+} = ( \sin kz, \cos kz, 0) \\
+	  \bm{V}_1^{-} = ( -\sin kz, \cos kz, 0)
+   \end{aligned}
+\end{equation}
+\begin{equation}
+   \begin{aligned}
+	  \bm{V}_2^{+} = ( -\sin kz, \cos kz, 0) \\
+	  \bm{V}_2^{-} = ( -\sin kz, - \cos kz, 0)
+   \end{aligned}
+\end{equation}
+$kz \to  \bm{k} \cdot \bm{x} $ 
+\begin{equation}
+   \left\{
+	  \begin{aligned}
+		 \bm{V}^{+} = \bm{V}^{+}_1 + \mi \bm{V}^{+}_2\\
+		 \bm{V}^{-} = \bm{V}^{-}_1 + \mi \bm{V}^{-}_2
+	  \end{aligned}
+   \right.
+\end{equation}
+\begin{equation}
+   \bm{u} = \sum_{\bm{k} } c_k \bm{\hat{V}} ^{\pm} (\bm{k} ,t)
+\end{equation}
+\begin{equation}
+   \frac{\dif c_k}{\dif t} = \sum_{m,n} Q_{kmn} c_m c_n + \nu k^2 c_k + f_k
+\end{equation}
+三波$\bm{m} + \bm{n} + \bm{k} = 0$.
 
+吉田善章1990
+\begin{equation}
+   \left\{
+	  \begin{aligned}
+		 &\nabla \times \bm{B}_n = \lambda_n \bm{B} _n \\
+		 &\bm{n} \cdot \bm{B}_n = 0 \\
+		 &\bm{n} \cdot \nabla \times \bm{B} _n = 0
+	  \end{aligned}
+   \right.
+\end{equation}
 
+\subsection{湍流数值模拟}
 
+Reynold 应力， $R_{ij} \equiv \left< u_i' u_j' \right> $ 湍流模型.
 
+二阶矩方法
+\begin{equation}
+   \frac{\partial \left< u_i' u_j' \right> }{\partial t} = P + D_1 + D_2
+\end{equation}
+右端分别是产生，扩散和耗散。
+
+涡粘性方法
+\begin{equation}
+   \left< u_i' u_j' \right>  = 2\nu_T S_{ij} + \frac{2}{3} \delta_{ij} k ,\quad k \equiv - \frac{1}{2} \left< u_i' u_j' \right> 
+\end{equation}
+\begin{equation}
+   \frac{\dif \nu_T}{\dif t} = \cdots
+\end{equation}
+
+Calay--Hamilton 定理
 
 
 
