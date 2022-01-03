@@ -49,17 +49,17 @@
 
 已知$B_{d d}$ 和$E(k)$的表达式为\cite{shi}
 \begin{equation}
-   B_{d d} = 2 \overline{u^2} [1 - E(r)],
+   B_{d d} = 2 \overline{u^2} [1 - f(r)],
 \end{equation}
 \begin{equation}
    E(k) = \frac{1}{\pi} \int_{0}^{+\infty} \overline{u^2}f(r)(kr)^2\left( \frac{\sin kr}{kr} - \cos kr \right) \dif r.
    \label{eq:1-1}
 \end{equation}
-下面构造$B_{d d}$,由于$f(0)=0$, $\lim_{r \to +\infty} f(r) = 0$, 所以设
+下面构造$B_{d d}$,由于$f(0)=1$, $\lim_{r \to +\infty} f(r) = 0$, 所以设
 \begin{equation}
    B_{d d}(r) = \begin{cases}
-	  r^{\frac{2}{3}} , & r < 0.9, \\
-	  1 - \left(\frac{1 - 0.9^{\frac{2}{3}}}{1 - \tanh(0.9)}\right)(1 - \tanh(r)), & r \ge  0.9.
+      r^{\frac{2}{3}} ,                                                            & r < 0.9,    \\
+      1 - \left(\frac{1 - 0.9^{\frac{2}{3}}}{1 - \tanh(0.9)}\right)(1 - \tanh(r)), & r \ge  0.9.
    \end{cases}
 \end{equation}
 
@@ -82,7 +82,7 @@
 
 卡门--豪沃思方程的积分形式为
 \begin{equation}
-   \frac{\partial }{\partial t}  \int_{0}^{k} E(k',t)\dif k' = -S(k,t) - 2\nu \int_{0}^{k} k'^2E(k',t)\dif k'.  
+   \frac{\partial }{\partial t}  \int_{0}^{k} E(k',t)\dif k' = -S(k,t) - 2\nu \int_{0}^{k} k'^2E(k',t)\dif k'.
    \label{eq:2_1}
 \end{equation}
 
@@ -217,11 +217,11 @@ K62 \citep{kolmogorov_1962} 模型中假设湍流在尺度 $\ell$ 上的粗粒�
 
 根据\cite[P71]{zhang17}有，用量纲分析导出改进的Kolmogorov模型是
 \begin{equation}
-   \delta u_l \propto (\varepsilon_{\ell} r)^{\frac{1}{3}}, 
+   \delta u_l \propto (\varepsilon_{\ell} r)^{\frac{1}{3}},
 \end{equation}
 设比例系数是$b$,两边取对数得
 \begin{equation}
-   \ln \delta u_{\ell} = \ln b + \frac{1}{3} \ln \ell + \frac{1}{3} \ln \varepsilon_{\ell}, 
+   \ln \delta u_{\ell} = \ln b + \frac{1}{3} \ln \ell + \frac{1}{3} \ln \varepsilon_{\ell},
 \end{equation}
 由于$\ln \varepsilon_{\ell}$ 是正态分布，所以$\delta u$ 是对数正态分布。由根据对数假设有
 \begin{equation}
@@ -244,7 +244,7 @@ K62 \citep{kolmogorov_1962} 模型中假设湍流在尺度 $\ell$ 上的粗粒�
 
 \textsf{\hspace{-2em}\sf  \textbf{解:}}
 
-In LES-NWR, in order to resolve the near-wall motions, the filter width and grid spacing in the viscous near-wall region must be on the order of $\delta_{\nu}$.\cite{pop} So 
+In LES-NWR, in order to resolve the near-wall motions, the filter width and grid spacing in the viscous near-wall region must be on the order of $\delta_{\nu}$.\cite{pop} So
 \begin{equation}
    \Delta x=a_{x} \delta_{v}, \quad \Delta z=a_{z} \delta_{v}.
 \end{equation}
@@ -328,7 +328,7 @@ whereas, on the basis of the mean rate of rotation $\bar{\Omega}_{i j}$, Baldwin
    \bm{u} (\bm{x} , t) = \sum_{\bm{k} }^{} \hat{\bm{u} } (\bm{k} ,t) \me^{\mi \bm{k} \cdot \bm{x} },
 \end{equation}
 \begin{equation}
-   \nabla \cdot \bm{u} = 0 \implies \sum_{k}^{} \mi \bm{k} \cdot \hat{\bm{u} } (\bm{k} ,t) \me^{\mi \bm{k} \cdot \bm{x} } = 0 \implies \bm{k} \cdot \hat{\bm{u} }(\bm{k} ,t)=0, 
+   \nabla \cdot \bm{u} = 0 \implies \sum_{k}^{} \mi \bm{k} \cdot \hat{\bm{u} } (\bm{k} ,t) \me^{\mi \bm{k} \cdot \bm{x} } = 0 \implies \bm{k} \cdot \hat{\bm{u} }(\bm{k} ,t)=0,
 \end{equation}
 \begin{equation}
    \frac{\partial \bm{u} }{\partial t}  + \nabla \cdot (\bm{u} \bm{u} ) = - \nabla \left( \frac{p}{\rho} \right) + \nu \nabla ^2 \bm{u} + \bm{f}.
@@ -336,7 +336,7 @@ whereas, on the basis of the mean rate of rotation $\bar{\Omega}_{i j}$, Baldwin
 亥姆霍兹分解 $\bm{a} = \nabla \phi + \bm{a}_{\bot}$
 \begin{equation}
    -k^2 \hat{\phi} = \mi \bm{k}  \cdot \hat{\bm{a} }(\bm{k} ),\quad \hat{\phi} = - \frac{\mi \bm{k} }{k^2} \cdot \hat{\bm{a} }(\bm{k} )
-\end{euation}
+\end{equation}
 \begin{equation}
    \hat{\bm{a} }_{\bot} = \hat{\bm{a} } - \mi \bm{k} \hat{\phi} = \hat{\bm{a} } + \mi \bm{k} \frac{\mi \bm{k} }{k^2}\cdot \hat{\bm{a} } = \hat{\bm{a} } - \frac{\bm{k} \bm{k} }{k^2}\cdot \hat{\bm{a} } = \left( I - \frac{\bm{k} \bm{k} }{k^2} \right) \cdot \hat{\bm{a} } = P \cdot \hat{\bm{a} }
 \end{equation}
@@ -356,7 +356,7 @@ ODE:
 
 从数学形式上看，二维和三维情况下最后没有区别。
 
-模拟的时候要注意网格数量和计算的最大波数$k$，使得能解析Kolmogorov 尺度 $\frac{L}{N} \sim \eta$ 
+模拟的时候要注意网格数量和计算的最大波数$k$，使得能解析Kolmogorov 尺度 $\frac{L}{N} \sim \eta$
 \begin{equation}
    \eta \equiv \left( \frac{\nu^{3}}{\varepsilon} \right)^{\frac{1}{4}}.
 \end{equation}
